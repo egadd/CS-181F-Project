@@ -1,0 +1,121 @@
+﻿Competitive Research
+
+
+        We found the four most used online flashcard study systems using a Google search. We then created accounts at each website and explore the features of each. All four websites allow users to create, share, and use flashcards in an online environment. Below we list the strengths and weaknesses of each website and then summarize our experience with each site. We also discuss what we learned from each competitor. Finally, we list proposed improvements to these competitors and briefly explain each.
+
+
+Competitor #1: Flashcard Machine <http://www.flashcardmachine.com/>
+Strengths
+1. Card sets can be saved to a fixed URL and shared with friends
+2. Cards can have images
+3. Study mode uses keyboard shortcuts for navigation
+4. Can flag cards to be studied again later
+5. Cards can be shared in a public, online database
+6. iOS and Android apps that sync with web site
+
+
+Weaknesses
+1. Cannot merge flashcard sets
+2. Complicated GUI:
+1. Commonly used functions are hard to navigate to
+2. Too many options by default
+3. Unnecessary and ugly warnings
+4. Buttons that don’t seem to do anything
+1. Displays image as URL in flashcard list, reducing immersion
+2. Poor organization of online database
+3. No option to import database flash cards into your own sets
+4. iOS and Android apps not free
+
+
+Lessons
+Flashcard Machine was the first competitor we researched. We found the process of creating a new deck of flashcards to be complicated and tedious, and expect to be able to streamline this process. The website offers many features, frequently unexplained, which made finding more basic features difficult. This website did introduce us to the concept of a massive online database of pre-made flashcard sets that users can search through for things they are interested. We are not sure about the ultimate value of such a feature. This competitor offers the basic functionality we expect, but a poorly designed user interface interferes with the user experience.
+
+
+Competitor #2: Flashcard Exchange <http://www.flashcardexchange.com/>
+Strengths
+1. Cards can be shared in a public, online database
+2. Can save card sets from database to personal stock
+1. These can then be edited as if your own
+1. Graphical summary of study session
+
+
+Weaknesses
+1. Cannot merge flashcard sets
+2. Main features are not obvious on home page
+3. Printing cards requires membership ($20)
+4. Website buttons and options are unorganized
+5. Website uses simple HTML options with little visual interest
+6. Using images and HTML requires membership ($20)
+
+
+Lessons
+This competitor has many of the same capabilities as Flashcard Machine. The user interface is equally, if not more, troubled and continues to interfere with the user experience. This website offers the option to become a lifetime member, for a fee, which opens up expanded functionality. This was an interesting concept for providing funding to the project.
+
+
+Competitor #3: Proprof’s Flashcard Maker <http://www.proprofs.com/flashcards/>
+Strengths
+1. Cards can be shared in a public, online database
+2. Cards can be printed
+3. Cards can be viewed, created, and edited in quantity
+4. Cards can have images
+5. Sets in the database can be rated and can then sorted by rating
+
+
+Weaknesses
+1. Cannot merge flashcard sets
+2. Cannot import flashcard sets from other sources or from the public database
+3. Commonly used functions are hard to navigate to
+4. Ads interfere with functionality
+
+
+Lessons
+This competitor was similar to the previous two. New to us was allowing users to rate the sets of cards in the public database to provide feedback to other users. Also, this website used more intrusive ads, such as popups, which significantly interfered with the use of the site.
+
+
+Competitor #4: Studystack Flashcards <http://www.studystack.com/>
+Strengths
+1. Option to allow other users to modify your flashcards
+2. Simple interface for creating/modifying flashcards
+3. Tutorials for how to use more complicated features
+4. Intuitive interface for viewing flashcards
+5. Many different interfaces for studying are included (e.g. games)
+6. Can download flashcards to iOS/Android/Windows Phone 7
+7. Fast account registration
+8. Cards can be shared in a public, online database
+
+
+Weaknesses
+1. Cannot merge flashcard sets
+2. Cannot create stack of flashcards with the same name as a stack created by another user
+3. Flashcards are text-only
+4. Tutorials are in Adobe Flash, so are incompatible with some mobile devices
+5. Aesthetically unappealing website design
+6. Poorly organized database with no dedicated search (only Google)
+
+
+Lessons
+Studystack offered the best experience of the competitors we explored. The list of features is more extensive, and particularly interesting are the options to study with games and the ability to let other users modify your cards. While the interface of this website was far better than the previous three, we still believe that there is potential for a more fluid interface, where the most common functionality is very clearly present.
+
+
+Potential Improvements
+        After reviewing our competitors’ websites, we decided on the following features as improvements our product could have to improve on the competition. Some of these features were present in one or more of the products listed above, but we believe they are necessary on ours.
+
+
+1. Capability to share your flashcard sets with other users
+1. This will allow classes to create a shared set of flashcards, or for friends to study together.
+1. Capability to merge flashcard sets
+1. If we implement a public database of flashcard sets, this would allow similar sets to be combined by a single user. Also, friends can split up the work of creating a large flashcard set.
+1. Cards with more than 2 sides
+1. This would be useful in certain situations, such as learning faces, where users might want to put a picture, a name, and a hometown all on one “card” and still be able to study each piece independently.
+1. Ability to search database with size criterion
+1. If users want to make sure they aren’t only finding small sets of cards in the database, this will be necessary.
+1. Intuitive click-and-drag interface for creating and using flashcards
+1. This is a proposal for a new style of interface for managing the flashcards within a set. We have seen many poor ways of doing this, and we believe a more natural style will be the answer.
+1. Multiple ways of displaying cards while managing them
+1. Some users might prefer to see the data on the cards in a list, where others might prefer to see representations of the cards.
+1. Capability to import flashcard data from other sources (e.g. Anki flashcard files)
+1. Outside integration will be useful if users already have existing flashcards in another system
+1. Capability to import audio or video (similar to images) into a flashcard
+1. A possible extension of the information stored on the cards.
+1. TeX interpreter for math
+1. Typing math in normal text is a pain, and often difficult to read. Offering a way to input text in LaTeX so as to make math appear more elegantly on the cards will be helpful.

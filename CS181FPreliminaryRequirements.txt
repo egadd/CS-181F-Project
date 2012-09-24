@@ -1,0 +1,50 @@
+﻿Potential User Groups
+By Role
+1. Students - Biggest user group
+1. Middle and high school students - Primarily test-based, study vocabulary, organize flashcard sets for class, cramming, want accessible interface
+2. College students - More long-term set use, for a class or series of classes rather than for a test
+1. Teachers - Want to create and share sets with students, want to maintain memorization for a long time
+2. Business professionals - More likely to need to keep flashcards for a long time and reference them regularly, larger sets
+
+
+By Function
+1. People who want to use cards to match and names and faces and memorize matches
+2. People who want to use other people’s flashcards
+3. People who want to create and share sets of flashcards for their friends, classmates, colleagues
+
+
+Use Cases
+1. A teacher has a class and wants to share study materials with their students. They first create a set of flashcards, then create a group of their students, and then make these flashcards accessible to this group.
+2. An individual student has an upcoming test over a large list of vocabulary. The test is soon and does not allow the student a lot of time to prepare for it. The student will create a large set of flashcards and then run through them all a few times as preparation.
+3. A student is given a list of vocabulary at the beginning of a semester and is told to have the list memorized by the end of the semester. The student first creates a large set of flashcards, and is then able to study them repeatedly over the months in between. Cards that the student struggles with more are revisited more frequently.
+4. A professional wants to learn a language. They create a set of flashcards containing common vocabulary and grammar rules and use them to maintain their knowledge of the language over an extended period of time.
+5. A student or teacher wants to memorize the names of the students in their class.  They can then create flashcards with pictures of faces one side and the corresponding name on the other.
+6. A student is in a class and has received a set of flashcards distributed by the teacher. The student wants to edit the set and add/remove cards.
+7. A student is studying for a test with a group of friends. They want to collaboratively create a set of flashcards.
+8. A person wants to become proficient in a foriegn language and wants to study a very large list of words.  They do not want to have to create this very large list themselves, so they access a public database
+
+
+How our product meets our users’ needs:
+1. Create and view flashcards (high priority)
+2. Create user group and add people to it (e.g. for a class), sets associated with groups (high priority)
+3. Large flashcard sets (medium priority)
+4. Flashcards can be displayed in a list format (front and back) and can be tabbed between for fast editing (medium priority)
+5. Default for flashcard sets is explicitly public, so users would understand that sets are being shared (medium priority)
+6. Sets can be tagged for easier searchability (low priority)
+7. Option to use spaced repetition or Leitner system integrated for systematic studying (medium priority)
+
+
+Requirements:
+1. When using cards to study, classify whether the content of a specific card is understood by the user or needs more repetition
+2. Create groups and add people to them
+3. Control who is in a group
+4. Share cards with group members
+5. Collaboratively create card sets with other users (control read/write privileges)
+6. Import other members’ card sets, edit them, and save them as your own
+7. Interface options: intuitive click-and-drag or array of tiles of cards (tab between tiles)
+8. Ability to create sets quickly without any mouse movement
+9. Add images to flashcards
+10. Option to add card sets to public database
+11. A database for very large sets that is moderated to prevent saturation by useless sets
+12. Database search (options: title, tags, text within cards, etc.)
+13. Save sets from database to user’s sets for editing

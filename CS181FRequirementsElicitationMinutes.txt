@@ -1,0 +1,83 @@
+﻿Notes
+ 
+Erin
+1. Junior at Mudd, CS. 
+2. Uses concept maps. 
+3. Doesn’t use flashcards. 
+4. Uses mnemonics.
+5. Splitting flashcards into groups would be useful.
+6. Subsets in groups.
+7. Would rather rewrite flashcards than use someone else’s.
+8. Collaborating on flashcard sets.
+9. If professors create flashcards, students will only study what is on flashcards. 
+10. Eliminate unneeded cards from other decks.
+11. Physical flashcards are more convenient and portable.
+12. First thing you should see is your flashcards, not 10 different sections.
+13. User picks threshold for repetition.
+Brianna
+1. Junior at Mudd, Engineering.
+2. Used flashcards yesterday.
+3. Numbers on names.
+4. Usually rewrites notes, does problems.
+5. Collaborating on sets would be useful.
+6. Would rather use other people’s flashcards if short on time.
+7. E-mail flashcards to people.
+8. Useful to share flashcards with class.
+9. Would not use database without looking through it first, would not use if something were misspelled.
+10. Problem of quality in database flashcards.
+11. Count number of users who used flashcard sets.
+12. Report incorrect cards.
+13. Some cards would be useful for lower-level classes.
+14. Using special characters would be useful for studying languages.
+15. Easier to keep track of flashcards gotten wrong.
+Samira
+1. Senior at Pomona, Molecular Biology.
+2. Rewrites notes.
+3. Uses flashcards to remember names and structures of amino acids, rote memorization.
+4. Creating sets is useful.
+5. Making different stacks of flashcards, useful for math proofs and memorizing equations.
+6. Would rather rewrite flashcards than use someone else’s, though depends on material.
+7. Used premade vocabulary flashcards to study for GRE.
+8. Something like a “Google Docs” for flashcards.
+9. Website with account would be useful.
+10. Should be used for standardized classes (such as O-chem), less useful for less standardized classes.
+11. Create subdeck based on other people’s decks.
+12. Digital flashcards would be useful because they could have more than 2 sides, useful when studying biochem.
+13. Can keep track of ratio of card seen to card gotten right.
+14. System could offer to repeat cards missed more often.
+Jonathan
+1. Senior in high school.
+2. Doesn’t need to study much.
+3. Flashcards from teachers would be useful, credible, and not need the rating system.
+Luke
+1. Pomona, CS and Math.
+2. Does problems, looks over homework.
+3. Uses flashcards for language vocabulary learning.
+4. Would prefer not to make one’s own flashcards, would rather look at them.
+5. Mark incorrect cards.
+6. Used Anki, desktop program with public database organized by most download (not very advanced, room for improvement), can upload deck to website.
+7. Uses 5000-word German deck, combination of people’s decks.
+8. Merging decks creates duplicates and inconsistent formatting.
+9. Tagging sets would be useful, and sets with the same tag could be combined.
+10. Rating system, searchability.
+11. Digital flashcards don’t have to be just text, which is an advantage of physical flashcards.
+ 
+General Comments
+1. Physical flashcards can lose order.
+2. Digital flashcards can be copied and shared.
+3. People don’t think of using digital flashcards, and tend to not use large sets.
+4. Physical flashcards are more mobile.
+5. Smartphone app would be useful. There is a tactile similarity to flashcards.
+
+
+
+
+Key points                 
+1. Some people learn from creating/writing flashcards
+2. Trust issue for sets created by someone else... possible fixes:
+1. rating system: by tags and rating or downloads/uses
+2. get sets from teacher/friend/classmate
+3. Very large sets a useful feature for some people (Luke)
+4. Ability to merge sets while removing duplicates.
+5. Ability to add pictures, LaTeX, etc.
+6. Cards with multiple sides.

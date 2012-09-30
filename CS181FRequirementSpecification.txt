@@ -1,0 +1,224 @@
+﻿Eli Gadd, Michael Vassilevsky, Chet Weger
+CS 181F
+29 September 2012
+
+
+Requirements Specification
+
+
+Card Set Mechanics
+Ability to create flashcards
+1. Priority: 10. Creating flashcards is the core functionality of any flashcard system.
+2. Source: Initial concept
+3. Difficulty: 4. HTML5 should offer support for the interface desired here.
+4. Confidence: 10. Without this requirement, the project is null.
+Ability to organize flashcards into sets, including the ability to add cards to a set, delete cards in a set, merge multiple sets
+1. Priority: 10. Without these abilities, basic functionality is compromised.
+2. Source: Initial concept
+3. Difficulty: 4. This comes down to managing a web database, something that is very common and should be well documented.
+4. Confidence: 10. Users need to be able to manage their cards.
+Ability for a user to maintain a library of flashcard sets
+1. Priority: 10. Users must be able to maintain multiple sets of cards in an organized fashion.
+2. Source: Initial concept
+3. Difficulty: 5. This takes more in depth work with databases, but should still be simple.
+4. Confidence: 10. Users need to be able to manage and view their decks.
+Ability to delete flashcard sets
+1. Priority: 10. Cards become outdated.
+2. Source: Initial concept
+3. Difficulty: 4. Once databases are understood, this is simple.
+4. Confidence: 10. Users will want to be able to get rid of sets they don’t use anymore.
+Ability to share sets of flashcards with an individual user
+1. Priority: 8. 
+2. Source: Preliminary requirements
+3. Difficulty: 6. Once again, this is all just database permissions and querying.
+4. Confidence: 8. The panel members in the requirement elicitation mentioned the ability to share cards as an advantage of digital cards.
+Ability to merge sets of cards easily and to remove repeat cards
+1. Priority: 6. This is more of a convenience feature, but an important one for making use of previously created sets.
+2. Source: Requirement elicitation
+3. Difficulty: 8. We anticipate some difficulty with removing repeated cards. It’s one thing to remove identical cards, and another to remove ones that essentially convey the same information. 
+4. Confidence: 7. A member of the panel mentioned this as a specific place to improve on existing products.
+
+
+Database Functionality
+A database of user created sets that all users can access
+1. Priority: 9. Useful so users don’t have to create their own flashcards (especially useful for larger sets).
+2. Source: Competitive research.
+3. Difficulty: 5. Databases are an established technology.
+4. Confidence: 7. Users expressed significant interest in this feature.
+A rating system for verifying the quality of a set of flashcards in the database
+1. Priority: 7. Users can distinguish between useful and useless sets.
+2. Source: Competitive research, requirements elicitation.
+3. Difficulty: 2. Easy to add this as a property of a set.
+4. Confidence: 5. Some users expressed an interest.
+Ability to flag specific cards in a set as incorrect
+1. Priority: 7. Users can improve sets by marking flashcards as incorrect.
+2. Source: Requirements elicitation
+3. Difficulty: 3. A button marked “mark this card as incorrect” when viewing someone else’s set.
+4. Confidence: 6. Users liked this feature.
+Option for a user to add their card sets to the public database
+1. Priority: 9. This is how the database is filled and becomes useful.
+2. Source: Competitive research.
+3. Difficulty: 3. Part of the implementation of the database.
+4. Confidence: 9. If there is a database, this is absolutely necessary.
+Once a user has put sets in the public database, they should be able to update these sets
+1. Priority: 7. Keeps sets up to date, so mistakes can be fixed.
+2. Source: Competitive research.
+3. Difficulty: 1. If users can edit their own flashcards, doing this would be very easy.
+4. Confidence: 7. Makes database more useful by keeping sets current.
+Users can share administrative privileges for sets in the public database
+1. Priority: 5. Others can maintain a set in the database.
+2. Source: Brainstorming.
+3. Difficulty: 2. If user group functionality is implemented, this should be easy.
+4. Confidence: 3. This may be useful, but no users expressed an interest in this feature.
+Database search (options: title, tags, text within cards, etc.)
+1. Priority: 9. A good database search enables users to access useful sets easily.
+2. Source: Competitive research.
+3. Difficulty: 7. Creating a useful search (not just using Google website search) may be a challenge.
+4. Confidence: 9. If there is a database, searching though it is necessary.
+Ability to copy sets to one’s library from the database or other users and then edit them
+1. Priority: 8. Users can take sets from the database and customize them to fit their individual needs.
+2. Source: Competitive research.
+3. Difficulty: 2. If copying sets within groups is implemented, this should be easy.
+4. Confidence: 7. It would give users greater flexibility.
+
+
+Studying Functionality
+Ability to open and flip through a set of flashcards
+1. Priority: 10. The ability to use sets is very important.
+2. Source: Initial brainstorming.
+3. Difficulty: 6. This will involve GUI.
+4. Confidence: 9. The functionality is simple and generally agreed upon.
+Users should be able to use keyboard shortcuts to navigate through the cards while studying
+1. Priority: 8. Adding keyboard shortcuts would substantially aid speed of review.
+2. Source: Competitive research.
+3. Difficulty: 1. Adding this functionality would be very simple since we would already have most of it done in a user interface format.
+4. Confidence: 10.  Potential users all seemed to agree that shortcuts would be useful.
+When using flashcards to study, classify whether the content of a specific card is understood by the user or needs more repetition 
+1. Priority: 8. This functionality is essential for implementing any form of spaced repetition.
+2. Source: Initial brainstorming.
+3. Difficulty: 1. Remembering times a card was gotten correct/incorrect would be quite simple.
+4. Confidence: 8.  Most agreed on value and form of this feature.
+When users study a set of cards, they should have options for the order in which the cards are displayed: random, linear, emphasizing cards that users have gotten incorrect frequently (spaced repetition)
+1. Priority: 9.  Having different options for display order is essential to meeting different user requirements
+2. Source: Competitive research.
+3. Difficulty: 3-7.  Random or linear order would be quite simple to implement, but a spaced repetition system could become quite sophisticated.
+4. Confidence: 7. Most agreed that, for instance, a spaced repetition system would be very useful for learning larger sets.
+When users finish studying a set of cards, the product should summarize the study session, including details such as: time spent studying, number of cards correct, number of cards incorrect
+1. Priority: 7.  Some potential users thought that this would be quite important.
+2. Source: Brainstorming and requirements elicitation.
+3. Difficulty: 3.  This requirement would not be too difficult since we would simply be displaying the number of times the cards had been gotten right or missed in a given session.
+4. Confidence: 8. Several people were quite vocal that this feature would be useful.
+The product should be able to remind users to study cards
+1. Priority: 6.  Without reminders, it is difficult to form daily study habits.
+2. Source: Initial brainstorming and requirements elicitation.
+3. Difficulty: 7.  Implementing email or some other form of communication might be difficult, and would require that we obtain personal information (Email address).  This might also be a security risk.
+4. Confidence: 8.  Potential users seemed agreeable to the concept of a reminder system.
+
+
+User Group Functionality
+A user can create a group of users, at which point that user will become the group administrator
+1. Priority: 7. The concept of user groups is something that sets this product apart from competitors. While not important to basic functionality, it will help make the product competitive.
+2. Source: Preliminary requirements
+3. Difficulty: 6. This sort of mechanic would be maintained in a database, with somewhat tricky read/write privileges.
+4. Confidence: 8. The members of the panel were very interested in this becoming a successful component of the product.
+A group administrator can add and remove members from the group they are in charge
+1. Priority: 7. This follows with the above requirement as a basic management power.
+2. Source: Preliminary requirements
+3. Difficulty: 6. Once again, an extension of the database control.
+4. Confidence: 8. If groups are implemented, this is necessary as well.
+A group administrator can choose to make other group members administrators
+1. Priority: 4. For the purpose of administration, it is helpful for the burden to not be forced on one person.
+2. Source: Preliminary requirements
+3. Difficulty: 3. If groups have already been implemented, this will not be a challenge.
+4. Confidence: 4. This was not mentioned by the panel, but seems simple and implicit with the group concept.
+Each group of users will have one shared library containing all card sets shared with that group
+1. Priority: 7. This is the core purpose of having groups.
+2. Source: Preliminary requirements
+3. Difficulty: 6. This will be very similar to having individual libraries, except with multiple users having read access.
+4. Confidence: 8. This is the reason the panel was interested in having user groups.
+If a user belongs to a group, then they can see sets of cards shared with the group
+1. Priority: 7. If the cards are there, members must be able to see and use them.
+2. Source: Preliminary requirements
+3. Difficulty: 6. Internet databases should support this easily.
+4. Confidence: 8. Same as prior requirement.
+If a user belongs to a group, then they can save sets of cards from the group into their personal library
+1. Priority: 7. Users will want to be able to edit and work with cards created in the group.
+2. Source: Requirement elicitation
+3. Difficulty: 5. This will be as simple as copying from one place in a database to another.
+4. Confidence: 7. Group created sets are great, but users need to be able to tailor these cards to their own needs.
+If a user belongs to a group, and the group administrator allows it, the user can share sets of cards with the group
+1. Priority: 7. This saves the creation of new card sets from scratch.
+2. Source: Preliminary requirements
+3. Difficulty: 5. This will be as simple as copying from one place in a database to another.
+4. Confidence: 7. This will be a large convenience feature.
+Collaboratively create card sets with other users (control read/write privileges)
+1. Priority: 6. This takes the burden off of one person for creating a set.
+2. Source: Preliminary requirements
+3. Difficulty: 8. This brings up the issue of cooperative editing, such as having two users change the same card at the same time. Maintaining a sets integrity becomes difficult.
+4. Confidence: 7. Members of the panel confirmed that this would be useful for large sets.
+
+
+Interface
+Click-and-drag or array of tiles of cards (tab between tiles) for creating/editing cards in sets
+1. Priority: 8. An easy-to-use interface would encourage users to use the product to study.
+2. Source: Initial brainstorming.
+3. Difficulty: 8. Requires significant GUI development.
+4. Confidence: 8. A good interface would be one of our greatest advantages over our competitors.
+Ability to create sets quickly without using the mouse
+1. Priority: 8. Users should be able to create many cards quickly.
+2. Source: Brainstorming.
+3. Difficulty: 6. Requires some adaptation of the GUI.
+4. Confidence: 7. Users should be able to create cards quickly.
+Since some users will learn well from the act of writing, users should have the option, when creating cards, to emphasize the word they type so as to reinforce them
+1. Priority: 7. This would attract users who find this useful.
+2. Source: Requirements elicitation.
+3. Difficulty: 4. Requires minor adaptation of the GUI.
+4. Confidence: 9. Several users requested this feature.
+While studying flashcards, users will use the up and down arrow keys to indicate whether they got a card right or wrong
+1. Priority: 6. This would decrease the amount of time users spend on the non-productive components of studying.
+2. Source: Brainstorming.
+3. Difficulty: 1. Easy to implement simple keyboard controls.
+4. Confidence: 5. No users expressed an interest in this feature, but it would be a useful option.
+
+
+Miscellaneous
+Support for very large sets (5000+ cards)
+1. Priority: 6. Only one potential user out of our five person panel thought that very large sets would be useful, so this is not a core feature.
+2. Source: Initial brainstorming.
+3. Difficulty: 0.  Implementing this feature would be as trivial as not putting a limit on the size of sets.  (However a rating system would greatly aid in the production of larger sets.)
+4. Confidence: 5.  There was some disagreement on the potential usefulness of very large sets.  Most seemed ambivalent to the idea of very large sets, however one of our potential users (Luke) had already had experience with using very large sets.
+Add characters from foreign languages to flashcards
+1. Priority: 8.  We anticipate studying foreign languages to be a primary use of digital flashcards, so support for foreign characters would be very useful.
+2. Source: Initial brainstorming.
+3. Difficulty: 4. Hopefully unicode libraries etc. will not make this too much of a headache.
+4. Confidence: 9.  Most agreed about the usefulness of support for foreign language.
+Add images to flashcards
+1. Priority: 8.  This functionality would be essential to keeping the digital flashcard as close as possible to paper flashcard.
+2. Source: Initial brainstorming, and requirements elicitation.
+3. Difficulty: 3.  Image libraries would probably make this functionality fairly easy.  The main problem would probably be handling the upload of the image.
+4. Confidence: 10.  Everyone agreed that images would be nice.
+Add videos to flashcards
+1. Priority: 4. Support for video would be nice but is not essential to basic flashcard functionality.
+2. Source: Initial brainstorming.
+3. Difficulty: 8.  Adding videos might be quite difficult.
+4. Confidence: 5.  We did not talk to potential users about this functionality, but it makes sense that people might want to be tested on visuals.
+Add sound recordings to flashcards
+1. Priority: 6. This feature would be nice but is not a core feature: most users would probably not use it.
+2. Source: Initial brainstorming.
+3. Difficulty: 6.  Adding audio support might not be that difficult with proper libraries, however uploading might be difficulty.
+4. Confidence: 5.  We did not talk to potential users about this functionality, but it makes sense that people learning a foreign language would want to be tested on sounds.
+Ability to create cards with LaTeX
+1. Priority: 6. This is not a core feature since most users would probably not even have experience with latex before.
+2. Source: Initial brainstorming.
+3. Difficulty: 6. There should be open source LaTeX interpreters that can be used.
+4. Confidence: 8. Several users agreed that support for latex would be useful.
+Cards with three or more sides
+1. Priority: 4.  The fast majority of users would probably not have a need for cards with more than two sides.
+2. Source: Initial brainstorming and requirements elicitation.
+3. Difficulty: 3. It would be simple to modify a flashcard to allow for multiple sides.
+4. Confidence: 7.  One user expressed a need for flashcards with multiple sides.
+
+
+[a]
+[a]chetweger:
+yeah I was trying to find a better description of "confidence" but I can't find it

@@ -1,0 +1,58 @@
+﻿Eli Gadd, Michael Vassilevsky, Chet Weger
+CS 181F
+29 September 2012
+
+
+Requirements Analysis
+
+
+The digital flashcard group held a requirement elicitation session on September 26th, 2012 at approximately 7pm. The session was held in the class’s normal room, Edmunds 101 on Pomona’s campus, and included a 5-member panel of potential users. Members of the panel included:
+1. Erin Coughlan, a junior computer science major at Harvey Mudd College
+2. Brianna Thielen, a junior engineering major at harvey Mudd College
+3. Samira Nedungadi, a senior molecular biology major at Pomona College
+4. Jonathan Chandra, a senior at the Sherman Oaks Center for Enriched Studies and intended computer science major
+5. and Luke Sedney, a junior math and computer science double major at Pomona College
+
+
+        Running the session were all three members of the group. Eli Gadd moderated the discussion, guiding it towards topics the group wished to hear the panel speak about. Chet Weger took note of important details that came up frequently, and assisted Eli in guiding the discussion. Michael Vassilevsky took detailed minutes of the session so that we could further analyze information gained from the panel.
+        Professor Mark Kampe sat in the rear of the panel evaluating the process.
+
+
+General Discussion Topics
+        Following introductions and the presentation of the concept, the discussion opened with broad questions about the way the panel members study in general, as well as for specific topics, such as things that require rote memorization (language vocabulary, mathematical formulae, etc.). Because the panel members were aware of the concept from the presentation, their responses were somewhat influenced to discuss how flashcards fit into this discussion. During this part of the session, there were three interesting points that were reinforced multiple times by the panel.
+First, the discussion about studying in general emphasized the variation in the way different people learn and retain information. For example, Samira prefers to rewrite her notes, claiming that the process of writing helps her learn the material before she even begins to study it. Counter to that, Erin creates concept maps of the course material, preferring to visualize the important information from a subject and to then be able to focus in on what she thinks needs more effort. To the group, this shows the extent to which flashcards can and cannot be useful. For some topics, users will prefer to study in a manner that flashcards simply cannot support.
+Second, all users agreed with the value of using flashcards to study foreign languages, whether to learn new words or to maintain words already in a user’s vocabulary. Because of this connection between flashcards and foreign language studies, it is vitally important that the product smoothly support flashcards using foreign languages, specifically by requiring the support of characters from languages that are not English.
+Finally, and this is to some degree an extension of the first point, a majority of the panel members indicated the importance of the process of creating the flashcards. Due to their different learning styles, those users that learn well from writing consider the act of writing the words onto the flashcards to be extremely important to them learning the material. The group now realizes that focusing on minimizing the process of creating the cards will prevent some users from getting everything that they could out of the experience. Instead, the product should have a way to emphasize the words that the user has typed in.
+
+
+New Requirements
+        From the discussion, the following new features arose as important to the panel members. Each one includes a rough estimate of priority (on a scale of 1 to 10, with 10 being highest priority), and an explanation of why this requirement is important and viable.
+1. Ability to input special characters for foreign languages
+1. Priority: 8
+2. Languages are a key reason for using flashcards in the first place. Being ready to support these users is vitally important
+1. A method for verifying the quality of a set of flashcards created by an unknown user
+1. Priority: 7
+2. Panel members indicated that the database loses a lot of value without a method for making it trustworthy. If they do not feel that a set of cards from the database has been verified, whether by other users or some other authority, they will be hesitant to use it.
+1. Sets in the database could be tagged/organized by class/subject
+1. Priority: 7
+2. Similar to the rating system, it is important to make the database searchable so that users can quickly find cards they’re looking for.
+1. Ability to merge sets of cards easily and to remove repeat cards
+1. Priority: 6
+2. Luke brought up the difficulty he had with other similar products in this category. If the database is well used, users will need to be able to tailor sets they find to their own needs
+1. Support for very large sets (5000+ cards)
+1. Priority: 6
+2. Without further research, it is difficult to be sure how frequently users will need large sets, but it is important that users do not run into a barrier for how many cards are allowed.
+1. Cards with three or more sides
+1. Priority: 4
+2. This feature was brought up by Samira as useful when there are more than two facts that users want to relate on a single “card”. A digital medium will make this easy to support, but it is difficult to say that this is an extremely important feature.
+
+
+Critique on Preliminary Requirements
+        In addition to querying the panel for new features and requirements, some time was spent discussing those features that the group had already established in the preliminary requirements. On the whole, most of the requirements discussed were affirmed by the group as important. However, a few things the panel said conflicted with what the group had previously believed.
+As was previously mentioned, the panel brought up the importance of being able to quickly create flashcards. This directly counters the early requirement of minimizing the time spent creating cards. Originally, the group had thought that users would want to spend as much time as possible running through the cards, studying them.
+        While the panel reacted very favorably to the concept of creating groups of members that represent a certain class or study group, the idea of letting teachers share card sets with their classes raised concerns. Panel members worried that if students received cards from their teacher or professor, they would consider the topics on the cards to be the only things that they should know. Teachers typically share study guides in the form of lists of topics that students should know in more depth. To help reduce this risk, the group believes that there should be no special role for teachers in these class groups, but that it is the responsibility of the teacher to be aware of the danger of trying to tell their students exactly what to study.
+Also of interest, the panel emphasized the importance of the home page of the product’s website. They recognized that in general, the majority of users will come to the site intending to do only a few things (make a set of cards, study with a set of cards), and so these features need to be easily accessible. Also important is the capability of our website to appeal to new visitors (potentially new users) to the site. With so many competitors, first impressions will be hugely significant in our ability to capture new users.
+
+
+Summary
+        The requirement elicitation provided an excellent opportunity for the group to learn about the proposed project from potential users. A number of new features, things that the group was previously unaware of, were mentioned as important requirements. In addition, the panel provided feedback that helped the group to evolve the requirements that they had already established.

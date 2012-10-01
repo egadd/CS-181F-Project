@@ -1,0 +1,39 @@
+﻿Eli Gadd, Michael Vassilevsky, Chet Weger
+CS 181F
+30 September 2012
+
+
+Final Report
+
+
+Concept
+        We propose a website that supports a digital flashcard system. Users would create an account and store and organize flashcard sets in their personal library. The website would also have a large public database of user-submitted (and user rated) sets. A user would be able to search the database for cards and save them to their own library for easy access and modification. Users would be able to organize themselves into groups and share flashcards through a group library. Flashcards would support a variety of media, such as text (including special characters for foreign languages), images, and LaTeX. A key advantage of digital flashcards is that it will reduce user overhead.  Users will have to spend less time trying to keep their flashcards organized, and techniques for maximizing studying efficiency such as spaced repetition can be applied without requiring effort on the part of the user.
+
+
+Potential Users
+        Students are our biggest potential user group. Middle and high school students would use the product primarily to study vocabulary for tests, and would be attracted to the simple click-and-drag interface we would implement. College students would use flashcard sets to study for classes or series of classes and would keep and use a set for longer periods of time. Educators, another user group, would use groups to share flashcard sets with their class to help them study key concepts and terms. Educators might also use this product to memorize the association of names and faces of people in their classes. Business professionals would use larger sets and keep them for longer periods of time (perhaps multiple years), referring to them regularly. Users studying a foreign language would be able to use the special characters to create flashcards that would facilitate learning.
+
+
+The Competition
+        There are many existing products with a similar purpose, many offering similar features to those we’ve proposed. However, they are limited by their interface. Our product would offer an intuitive click-and-drag interface for easy flashcard editing and organization, as well as tiling flashcards for fast set creation without mouse movement. Our product would also uniquely offer users the opportunity to organize themselves into groups and share sets through a group library. Though many of our competitors have databases, our database would have a dedicated search function (our competitors primarily use Google site search) that would search tagged sets, set titles, and card text. 
+
+
+User Validation
+        We interviewed a panel of potential users, most of whom had never used digital flashcards. Some potential users found the process of writing flashcards useful in itself, and our product would offer an interface option allowing users to view flashcards closely as they are being created. The panel was receptive to the idea of having groups for classes or study groups. The panel also reaffirmed the value of flashcards for studying for foreign language, a user base we intend to target heavily. They agreed that the sharing capability of digital flashcards is far superior to those of paper flashcards, and suggested taking advantage of it by way of user-to-user sharing and shared group libraries. They indicated that the public database would be useful provide some quality assurance feature would be implemented. Suggestions included the ability to rate sets in the database and flag individual cards in a set as incorrect.
+
+
+Key Requirements
+1. The ability to create and organize flashcards into sets in a personal user library,  including the ability to add cards to a set, delete cards in a set, and merge multiple sets.
+2. Users would be able to add characters from foreign languages and images to cards. A LaTeX interpreter would also be implemented.
+3. When using flashcards to study, users would have the option to track their success rate. The product will then be capable of displaying this information to the user.
+4. The user would be able to select the order in which flashcards in a set are presented: linearly, randomly, and favoring cards missed more often (spaced repetition).
+5. Two interfaces would be available to users when creating flashcards: an intuitive click-and-drag interface focusing on individual cards and a view in which cards in a set are tiled for fast card creation.
+6. Users would be able to create cards with three or more sides.
+7. When studying, users would be able to use keyboard shortcuts to use a set (left and right to navigate to the previous and next card, space to flip the card over, and up and down to mark it as right or wrong).
+8. The ability to share sets of flashcards with an individual user.
+9. Users can create groups of other users that can then share cards with each other and view sets in a group library. The group creator would manage privileges of who can view, edit, and copy the sets.
+10. A database of user-created sets that all users can access. Users would be able to rate sets in the database and mark individual cards as incorrect. When creating or viewing a set, a user would have the option to share a set with the database. A user would be able to modify and update the sets they shared with the database. A database search would let users search through set titles, card text, and tags. Users could import sets from the database into their own library for editing.
+
+
+Feasibility
+        The primary components of this project are the interface, user groups, and the public database. We propose to implement the interface in HTML5, a relatively established technology. Individual users’ sets, user libraries, and the public database would be stored in a database on a server. We believe that these two tools are well-documented and working with them will not present any significant challenges.

@@ -1,0 +1,20 @@
+Deliverable,Due Date,Owner,First Draft,Review Due,Final Copy,Whole team/Individual,Dependencies,Risk,Comments on Risk
+Architecture Plan,10/7/2012,Eli,10/6/2012,10/6/2012,10/7/2012,Whole Team,None,Unrealistically distribute workload,"Low risk. We are confident that we can meet at the times we have set, and that we can meet the deadlines we have set ourselves."
+Preliminary Architecture,10/14/2012,Chet,10/9/2012,10/12/2012,10/13/2012,Whole Team,Plan,"Fail to effectively describe our architecture to outside readers
+
+
+Fail to create a viable architecture","Medium risk. We will work to make sure that our architecture is described completely, and that our description makes sense to readers unfamiliar with the project.
+
+Low risk. If our architecture is poorly made, the design review process should help us to fix any issues with it."
+Design Review,10/21/2012,Eli,10/14/2012,10/14/2012,10/16/2012,Whole Team,Other Team's Architecture,Fail to understand other team's architecture,Low risk. We will analyze the other group's architecture as both a group and as individuals. The group stage will allow us to discuss any confusion we have about the architecture
+Final Architecture,10/28/2012,Michael,10/23/2012,10/26/2012,10/26/2012,Whole Team,"Preliminary Architecture, Design Review from Other Team","Unable to resolve any issues raised by the design review
+
+Design review fails to notice flaws in our architecture","Medium risk. If any issues cause problems, we will meet with the group that reviewed our design to ask questions, or we will meet with Prof. Kampe.
+
+Medium risk. We will not consider the comments by the design review to be the only critique necessary of our architecture. We will also review our architecture."
+Post-Mortem,10/28/2012,Chet,10/26/2012,10/26/2012,10/27/2012,Whole Team,Final Architecture,Unwilling to give accurate feedback,Low risk. Avoid pointing fingers. Acknowledge that the purpose is to reflect and improve
+,,,,,,,,,
+We will meet after class every Tuesday to check in and discuss the next deliverable.,,,,,,,,,
+"We will also meet on either Friday, Saturday, or Sunday of each week to work on the next deliverable as agroup",,,,,,,,,
+"If anything goes wrong, email will be sent that day regarding the issue.",,,,,,,,,
+We will each check our email around noon each day for any status updates,,,,,,,,,

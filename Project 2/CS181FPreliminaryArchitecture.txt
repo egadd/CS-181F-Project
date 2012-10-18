@@ -1,0 +1,137 @@
+﻿Chet Weger, Eli Gadd, Michael Vassilevsky
+CS 181F
+Kampe
+17 October 2012
+
+
+Preliminary Architecture
+
+
+Introduction
+In order to ensure a broad enough perspective, we describe the architecture from the point of view of the client as well as the component. The architecture from the point of view of the client focuses on describing the interfaces between the various components of the website that the user will interact with. In this case, the components are web pages, and the interfaces between the web pages are composed primarily of hyperlinks. The architecture from the point of view of the components describes the interactions between the actual working software components. In this case, the components are models, views, and templates that build a website using the Django web framework, and the interfaces are the various interfaces used to communicate between these components.
+
+
+1.1 Architecture of Navigation
+Below we illustrate navigation for a user of our website. All objects in containers represent distinct web pages. The arrows between containers represent hyperlinks. After clicking on a hyperlink from google or some other website, users would begin navigating this website at the home page. At this point, they would have the option of logging in (to access their user profile page), or proceeding to registration. Visitors not logged in would have limited access of the website. From the home page, they would be able to log in, start the registration process, navigate to the public database, search and view lists of results from the public database, and even view card sets (i.e. practice decks) from the public database. However, all other features would require logging in to an existing account. After creating an account through the registration process, users would be able to log in to view their user profile. This would contain information on groups they belonged to as well as their own private library of flashcard sets. By clicking on a set in their private library, they would be able to view that card set. Alternately, clicking on a group displayed on the user profile page would navigate the user to view that group’s group library. Here, once again, clicking on a card set would enable the user to view that card set. From the user profile, there would also be a link to the public database. Finally, from the user profile, the user would be able to select sets of cards in his/her library to edit, merge, or simply create a new set. From this edit page, the user would also be able to submit card sets to the public database. The option to enter edit mode from the group library would also be available to members (of that group) with adequate permissions.
+ 
+
+
+
+
+1.2 Modification
+Previously we described the hyperlinks between web pages. Here, we describe the user’s ability to modify and move sets. A user will have the option of coping decks among the public database, the user/private library, and the group library. Furthermore, when accessing his/her sets in the public or private library, a user will be able to take one or more of those sets to be edited in the edit page. Finally, the registration process as well as searching the public database both require forms which are distinct from simple hyperlinks.
+
+
+1.3 Interfaces
+As described above, most of the interfaces between the components are hyperlinks. However, additional advanced HTML5 features will be required to support interactive functionality.
+
+
+1.4 Key Issues and Chosen Approach
+A sign of good architecture from the client’s perspective is the ability to quickly navigate to wherever the client wants. Keeping this in mind, we combined what we initially thought were going to be a separate user profile page, group list page, and private library page into a user profile page complete with group list and private library. These adjustments streamline navigation within the website.
+
+
+2. Architecture from the Component’s Perspective
+To create a website which would offer the functionality described above, we knew we needed a web framework that would allow for dynamic, interactive functionality and easy support for a database. After some initial search, we eventually settled on the Django web development framework. Websites created using Django follow the M.T.V. model where M stands for models, the T stands for templates, and the V stands for views. Here, templates are .html files that form the static part of web pages. These leave gaps for information from the database to be filled into. Models are python classes that create database tables (by invoking wrapper functions from the django library), and send information to and receive information from these tables. Views bridge the gap between models and templates, and also describe the “business logic” of the website. Thus, the views combine templates and information from the databases through the models to form a complete web page.
+
+
+2.1 Components
+As described before, our components can be broken down into three main categories: templates, views, and models.
+
+
+2.1.1 Templates
+1. HomePage.html will just be a generic homepage displayed the same to every visitor.
+2. Registration.html will be a generic page that will allow a new user to enter information necessary for creating a new user profile.
+3. UserProfile.html will display a personal library of flashcard sets as well as a list of groups that
+4. GroupLibrary.html
+5. DatabaseResults.html will allow a user to search the public database for desired sets of flashcards.
+6. SetViewer.html will allow a user to open and practice a flashcard set.
+7. SetEditor.html will allow a user to create, edit, merge, and move sets.
+
+
+2.1.2 Views
+1. URLconf maps each url to the appropriate view, calling a view when a url was entered into the web browser. (The appropriate view is then responsible for returning the desired web page back to the client or performing some other action depending on other arguments transferred from the url.)
+2. HomePage.py simply returns the HomePage.html to the client.
+3. Registration.py is responsible for returning Resistration.html to the client as well as handling registration form inputs from the client and then inputting this information into the UserTable.py.
+4. UserProfile.py displays the generic UserProfile.html when initially called. On initial loading, any flashcard sets in the personal library are displayed from the UserSetTable.py model and any groups that the user belongs to are displayed from the GroupTable.py model.         GroupLibrary.py displays the generic GroupLibrary.html on initial load as well as any group sets stored in GroupSetTable.py.
+5. DatabaseResults.py displays the generic DatabaseResults.py. Furthermore, if the user enters in a search, it returns the appropriate results from the SetTable.py model.
+6. SetViewer.py displays the generic SetViewer.html. Furthermore, it displays cards using information from the appropriate set model (set table, user set table, or group set table, and the CardTable.py)
+7. SetEditor.py displays the generic SetEditor.html. Furthermore, it allows a set (set table, user set table, or group set table) to be modified, and the appropriate card in CardTable.py to be created, deleted
+
+
+2.1.3 Models
+1. UserTable.py describes various user profiles.
+2. SetTable.py describes the public flashcard sets that have been submitted to the public database.
+3. UserSetTable.py describes the private libraries of users with user profiles.
+4. GroupTable.py describes the various groups that have been created.
+5. GroupSetTable.py describes the various groups that users belong to.
+6. CardTable.py describes all the cards.
+
+
+2.2 Persistent Data Objects
+Persistent data is stored using MySQL. This data is stored on a server. The persistent data is simply information that is stored as a result of commands and information from the models as described above.
+
+
+2.3 Diagrams
+See Figure 2 below. The client enters a url or some other request into his browser. The url is mapped to the appropriate view using the URLconfig file which simply describes a mapping of urls to views. From here, depending arguments passed to the view, the view might access a template and or a model using appropriate django wrapper functions. The view would then package these together, and return a complete web page to the client.
+
+
+
+
+
+2.4 Interfaces
+The first interface is in the form of a request sent from the client to the server. This request will always contain a url, and this will allow the URLconfig file to call the appropriate view function. Additional data is passed as arguments to the view. The interface between a view and a template is taken care of very simply with the get_template() Django library function. A wide variety of functions enable communication between views and models. Since these functions are simply wrapper functions to the underlying database functions, they follow the same pattern that would normally be used to add, remove and access data in a database. Finally, when all the components of the web page have been created and the end result is appended together, the resulting web page is returned to the client using another Django function (HttpResponse() function).
+
+
+2.5 Key Issues and Chosen Approach
+One of the key issues in good architecture is organizing components so as to attain high coherence and loose coupling. Our choice of using the Django web framework helps enable high coherence because the M.T.V. separation ensures separation of modules based on functionality. Furthermore, by separating, for example, HTML (the templates) and code dealing with databases (the models). Our architecture helped achieve this in two ways. First, by using 
+
+
+2.6 Major Outstanding Issues
+To better understand the Django web framework, and to gain a sense of confidence in its capabilities, we found following some of the tutorials to be quite useful https://docs.djangoproject.com/en/1.4/intro/tutorial01/.
+
+
+3. Webpage Operations
+Actions performed on the website fall into two major categories: those that require a new  or updated webpage to be displayed (navigating between pages), and those that make changes to database tables (deleting a set, editing a card in a set). We have already established the process by which webpages are synthesized through the use of Django. Django will also enable us, through the use of models, to make changes to tables in the database. An action on a webpage, such as clicking a button, will trigger a request to the view, which can then run commands that will generate SQL queries to update data in the tables.
+
+
+3.1 Operations By Webpage
+        Here, we briefly enumerate those functionalities of each webpage that will make use of the models to update information in the database tables. This provides an idea of what functionality the first version of our product will include, as well as where in the navigation interface these functionalities will reside.
+
+
+Home Page
+1. None
+
+
+Registratioin
+1. Add new user - Upon registration, users will have their username, password, and other user information stored in the user information table.
+
+
+User Profile
+1. Create set - Adds a set to the user set library table, and updates the user’s set list to include the new set.
+2. Delete set - Removes a set from the user set library table, and removes it from the user’s set list.
+3. Join group - Sends a request to the target group. Upon acceptance, the user will be added to the group’s user list and the group will be added to the user’s group list.
+4. Leave group - Removes a user from a group. The group is removed from the user’s group list and the user is removed the group’s user list.
+
+
+Public Database
+1. None
+
+
+List of Results
+1. Save to library - Saves a set from the public database to a user’s set library. A copy of the set is made so that the user can safely edit this set. The user’s set list is updated to include this copy.
+
+
+Edit
+1. Save - Commits any changes made to a set to the individual cards stored in the card table.
+
+
+View
+1. Throughout the studying/viewing process, study information will be recorded and updated into the set table in the database.
+
+
+Group Library
+1. Create set - Adds a set to the group set library table, and updates the group’s set list to include the new set.
+1. Delete set - Removes a set from the group set library table, and removes it from the group’s set list.
+2. Add set from library - Copy a card set from a user library to the group library.
+3. Leave group - Removes a user from a group. The group is removed from the user’s group list and the user is removed the group’s user list.
+4. Update member permissions - Control which members have read access (are members), have write access (can create/edit card sets), and admin access (can also control user permissions).

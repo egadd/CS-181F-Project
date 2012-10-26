@@ -1,0 +1,134 @@
+﻿Eli Gadd, Chet Weger, Michael Vassilevsky
+CS 181F
+26 August 2012
+
+
+Prepared Notes for the Architecture Review
+
+
+        Our group will be reviewing TheTeam’s preliminary architecture for their Q&A website, QED. In preparation for this review, which will be held on Friday October 26th at 6pm, we individually studied TheTeam’s architecture and prepared notes and questions for the review. Attached below are the notes, questions, and comments of each of the three members of our group.
+
+
+________________
+
+
+
+
+1. Notes by Chet Weger
+
+
+A. Component Side
+Use of Amazon EC2 instance
+1. Is it necessary to commit to what type of server resources you are using?
+2. What server environment will you be using for development.  Is the Amazon EC2 instance an ideal server environment for development?
+3. How much does it cost to commit to using the EC2 server?
+
+
+Amazon S3
+1. How will you simulate this part of your application during the development process?
+
+
+Use of HTTPS
+1. Need for a certification of public key (according to Wikipedia: http://en.wikipedia.org/wiki/Https#Acquiring_certificates)
+2. How difficult is it to obtain a certificate?
+
+
+Ruby on Rails
+1. How does ROR form a complete web page?  How does it integrate basic web page stuff (e.g. perhaps in html?) with information from the database and/or Amazon S3?  
+2. What are the internal components of ROR?  Are there specific components responsible for managing the database, the web page “look”, the urls, etc?  What are the interfaces between these components?
+3. What are the runtime components of ruby on rails
+
+
+General
+1. What are the runtime components, generally speaking?
+
+
+B. Client Side
+Web Pages
+1. How many web pages are there, and what are the links between the web pages?
+2. Is each use case a web page?
+
+
+C. Summary
+Component Side
+1. Strengths: I especially liked your description of the persistent data objects and of how your database would work.  I also thought your discussion of the interfaces was fairly complete. Overall, I think I got a fairly complete picture of your architecture.
+2. Weaknesses:  One of my primary concerns was how was your server environment going to support the development process? (Amazon EC2 instance, Amazon S3, and HTTPS requests.)  Other than that, I thought it might have been valuable to describe the internal components and the interfaces of Ruby on Rails.
+Client Side
+1. Strengths: I liked your prototype.
+2. Weaknesses: How many web pages will you have?
+
+
+________________
+
+
+
+
+2. Notes by Michael Vassilevsky
+
+
+A. Component Side
+CLI
+1. Should it be the only way to add new customers to the database?
+2. Potential security issues?
+
+
+Authentication
+1. Requesting a password reset email is a potential barrier to entry.
+2. If Devise is always responsible for password creation, can users select their own passwords?
+
+
+B. Client Side
+Users
+1. How are users in the “Former Student” category added? By the instructor/TA?
+
+
+Web Page Prototype
+1. “Ask A Question” is placed immediately above the questions asked that week, potentially confusing new users. Perhaps replace it with a text box with “Type your question here” written in it?
+
+
+Study Groups
+1. Whether a student is a member of a group is an attribute of the group, not of the student user. When checking of what groups a student is a member, every group in the database must be examined. This may be an inefficient approach (increasingly inefficient as more groups are created).
+
+
+Miscellaneous
+1. What happens to a class at the end of the semester/year? Is there any kind of automatic deletion or archiving?
+2. The “Implementation Risks” section mentions Javascript and CSS. Where would these be used?
+
+
+________________
+
+
+
+
+3. Notes by Eli Gadd
+
+
+Architecture Overview
+1. You describe pulling information from the database, and then creating a webpage from this information. I think it is important to provide more explanation about how this process will be done, specifically how the information you have stored in the database will be helpful in generating the desired information on the webpages you describe.
+
+
+Actors
+1. For the send message page, are professors not allowed to send messages?
+2. No mention is made of how files from a user’s computer will be uploaded to the database. Is this functionality built into one of the existing softwares that you have already mentioned, or would a new system need to be chosen for this purpose?
+
+
+File System Access
+1. This section is very vague. By “local file system”, do you mean the user’s local hard disk?
+2. If so, for what reason does your web application need access to my hard disk?
+
+
+Persistent Objects
+1. The user table has both students and instructors. It has a column that labels a user as one or another and then has 4 columns, for student, former student, TA, and instructor. If a user is an instructor, 3 of these columns must be empty, and if a user is a student, the last must be empty. Is this double layer of identification necessary?
+2. Instructors and students/TAs appear to be treated very differently throughout the application. Perhaps it would make more sense to have them represented in a second table, for instructors only?
+3. Redundancies. A user stores his classes, and a class stores its users. But a study group stores its users while a user does NOT store his study groups. Is this double layer necessary/advantageous? Either way, it should be consistent across all groupings.
+4. Similarly, questions, announcements, and messages do not store the course that they are related to, while the course does store which of these it is related to.
+5. Users need to store their name. Also, each user will need to have a unique key that can be used to locate them in the table. Alternatively, you could require unique usernames for all users, but this would prevent users from using their real names. Some of your tables appear to have these unique keys, but you will need to maintain for any “object” represented in the database.
+
+
+Scalability
+1. You mention expanding to multiple instances but do not address how difficult this would be to accomplish.
+2. Is there a risk with putting all of one university’s resources onto one instance?
+
+
+Implementation Risks
+1. What steps are you taking to manage these risks?

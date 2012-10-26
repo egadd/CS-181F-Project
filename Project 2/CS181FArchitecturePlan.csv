@@ -6,7 +6,7 @@ Preliminary Architecture,10/14/2012,Chet,10/9/2012,10/13/2012,10/14/2012,Whole T
 Fail to create a viable architecture","Medium risk. We will work to make sure that our architecture is described completely, and that our description makes sense to readers unfamiliar with the project.
 
 Low risk. If our architecture is poorly made, the design review process should help us to fix any issues with it."
-Design Review,~10/21/2012,Eli,10/16/2012,10/16/2012,10/18/2012,Whole Team,Other Team's Architecture,Fail to understand other team's architecture,Low risk. We will analyze the other group's architecture as both a group and as individuals. The group stage will allow us to discuss any confusion we have about the architecture
+Design Review,~10/21/2012,Eli,10/25/2012,10/25/2012,10/26/2012,Whole Team,Other Team's Architecture,Fail to understand other team's architecture,Low risk. We will analyze the other group's architecture as both a group and as individuals. The group stage will allow us to discuss any confusion we have about the architecture
 Final Architecture,~10/28/2012,Michael,10/23/2012,10/26/2012,10/26/2012,Whole Team,"Preliminary Architecture, Design Review from Other Team","Unable to resolve any issues raised by the design review
 
 Design review fails to notice flaws in our architecture","Medium risk. If any issues cause problems, we will meet with the group that reviewed our design to ask questions, or we will meet with Prof. Kampe.
@@ -24,3 +24,4 @@ Management Updates,,,,,,,,,
 10/14/2012:,The first draft and review of the design review were pushed back until the following Tuesday because the groups had not yet switched materials.,,,,,,,,
 10/16/2012:,The final submission of the preliminary architecture was delayed because a member of the group felt that it required more work and did not raise this issue until after the due date.,,,,,,,,
 10/16/2012:,The design review dates were suspended while we await the documents from the group that we will be reviewing.,,,,,,,,
+10/25/2012:,"The design review was pushed back until Friday, October 26th because of delays. We did not receive the architecture we were intended to review until after fall break.",,,,,,,,

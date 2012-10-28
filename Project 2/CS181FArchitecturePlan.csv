@@ -7,12 +7,12 @@ Fail to create a viable architecture","Medium risk. We will work to make sure th
 
 Low risk. If our architecture is poorly made, the design review process should help us to fix any issues with it."
 Design Review,~10/21/2012,Eli,10/25/2012,10/25/2012,10/26/2012,Whole Team,Other Team's Architecture,Fail to understand other team's architecture,Low risk. We will analyze the other group's architecture as both a group and as individuals. The group stage will allow us to discuss any confusion we have about the architecture
-Final Architecture,~10/28/2012,Michael,10/23/2012,10/26/2012,10/26/2012,Whole Team,"Preliminary Architecture, Design Review from Other Team","Unable to resolve any issues raised by the design review
+Final Architecture,~10/28/2012,Michael,10/26/2012,10/26/2012,10/27/2012,Whole Team,"Preliminary Architecture, Design Review from Other Team","Unable to resolve any issues raised by the design review
 
 Design review fails to notice flaws in our architecture","Medium risk. If any issues cause problems, we will meet with the group that reviewed our design to ask questions, or we will meet with Prof. Kampe.
 
 Medium risk. We will not consider the comments by the design review to be the only critique necessary of our architecture. We will also review our architecture."
-Post-Mortem,10/28/2012,Chet,10/26/2012,10/26/2012,10/27/2012,Whole Team,Final Architecture,Unwilling to give accurate feedback,Low risk. Avoid pointing fingers. Acknowledge that the purpose is to reflect and improve
+Post-Mortem,10/28/2012,Chet,10/27/2012,10/27/2012,10/27/2012,Whole Team,Final Architecture,Unwilling to give accurate feedback,Low risk. Avoid pointing fingers. Acknowledge that the purpose is to reflect and improve
 ,,,,,,,,,
 We will meet after class every Tuesday to check in and discuss the next deliverable.,,,,,,,,,Yellow dates have been changed from the original plan
 "We will also meet on either Friday, Saturday, or Sunday of each week to work on the next deliverable as agroup",,,,,,,,,Red dates are due dates that were not met.
@@ -25,3 +25,4 @@ Management Updates,,,,,,,,,
 10/16/2012:,The final submission of the preliminary architecture was delayed because a member of the group felt that it required more work and did not raise this issue until after the due date.,,,,,,,,
 10/16/2012:,The design review dates were suspended while we await the documents from the group that we will be reviewing.,,,,,,,,
 10/25/2012:,"The design review was pushed back until Friday, October 26th because of delays. We did not receive the architecture we were intended to review until after fall break.",,,,,,,,
+10/26/2012:,The compilation of our final architecture and of the post-mortem was pushed back because of the delayed architecture review. This delay is manageable because no exceedingly large flaws were discovered during the review that necessitate large amounts of time be spent on them.,,,,,,,,

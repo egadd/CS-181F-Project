@@ -1,0 +1,59 @@
+﻿Chet Weger, Eli Gadd, Michael Vassilevsky
+CS 181F
+Kampe
+17 October 2012
+
+
+Final Issue Report
+
+
+Issue: Architecture Overview
+A later section dedicated to Ruby On Rails was updated to explain how Ruby creates webpages.
+
+
+Issue: Actors
+The role of former students was clarified throughout the document. Specifically, the fact that they cannot ask questions was made consistent throughout the section.
+
+
+Issue: CLI
+After the realization that CLI was not the right term for this section, it was changed and now better reflects the technical matter that it describes.
+
+
+Issue: Web Interface
+An extensive section was added that describes the three webpages present for their web application and the functionality that each encapsulates. In addition, the issue of handling navigation outside of the laid out navigation path was addressed; specifically that requests when a user is not logged in will redirect to the login page.
+
+
+Issue: HTTPS
+This was considered outside of the scope of the architecture by TheTeam.
+
+
+Issue: File System Access
+TheTeam fixed lack of clarity in this section about which file system the product was accessing.
+
+
+Issue: Persistent Objects
+Consistency in the database tables was made complete.
+
+
+Issue: Authentication and Authorization
+This section was extensively edited to much more clearly describe the password process of the product.
+
+
+Issue: Scalability
+This section was also redone to more clearly explain how the group planned to expand for larger user bases, including the fact that they do not expect an explosively large user base, and that the product managers have control over adding new clients.
+
+
+Issue: Implementation Risks
+This was considered a design issue, and was left out.
+
+
+Issue: Amazon EC2 and S3
+This was considered outside of the scope of the architecture.
+
+
+Issue: Runtime Components
+Those components that are running at runtime were labeled as so.
+
+
+Issue: Old Courses
+In the Persistent Object section, it was noted that old courses will continue to exist and artifacts.

@@ -1,0 +1,47 @@
+﻿Chet Weger, Eli Gadd, Michael Vassilevsky
+CS 181F
+Kampe
+17 October 2012
+
+
+Architecture Changes
+
+
+Introduction
+We added a paragraph here that gives a basic introduction to our product, including a list of some of the basic functionality, as well as a brief summary of how the product will be designed.
+
+
+1.1 Architecture of Navigation
+We added the user preference page to the diagram and to the paragraph. This page handles changing passwords and email preferences.
+
+
+1.2 Modification
+The end of this section was clarified.
+
+
+1.3 Interfaces
+Here, we state that we will use HTML5 to design the user interfaces of our website, while hyperlinks will form the navigation between different component pages.
+
+
+1.4 Error Handling
+This section is new, and describes the behavior for when an outside user attempts to not follow the navigation paths that we have laid out (perhaps through bookmarks).
+
+
+2.1.3 Models
+These bullets were expanded to describe what exactly each model (representing a database table) will contain.
+
+
+2.3 Diagrams
+The diagram here was updated to reflect the inclusion of information on the Apache server and the Amazon EC2 instance
+
+
+2.6 Major Outstanding Issues
+We now list known issues, as well as possible resolutions. Included in this section is the issue of security, which we have left alone, but are firmly confident that it will not be an issue given the small amount of data that we need to protect, and given how common this level of privacy already is. In this section, we also describe the basic prototyping we did with Django as a proof of concept of this technology.
+
+
+3. Runtime Components
+In this new section, we describe the components active at runtime for our product. This includes information on the server.
+
+
+4.1 Operations by Webpage
+We updated this section to include the information on the user preferences page that was added to the navigation section above.

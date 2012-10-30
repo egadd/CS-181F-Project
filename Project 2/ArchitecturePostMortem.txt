@@ -1,0 +1,65 @@
+﻿Eli Gadd, Michael Vassilevsky, Chet Weger
+CS 181F
+29 October 2012
+Author: Chet Weger
+
+
+Post Mortem
+
+
+Introduction
+With the submission of our final architecture, our CS 181 project has all the major components in place, ready to be designed. During the process of creating the architecture, our group learned a lot about architecture, group communication and the technologies necessary for our architecture. Below we will discuss the process of creating our architecture in depth, highlighting what worked well for us, and what we see in retrospect could have been done better.
+
+
+Creation of the Initial Architecture
+To even begin the creation of our initial architecture, we found ourselves struggling to understand the format of the document we were aiming to produce.  A short meeting with Professor Kampe greatly helped clarify what the overall format of our document would look like: we would divide the document into a discussion of the client side aspects, and an analysis of the architecture from the point of view of the components.  After meeting, we decided that we would use Django.  I had done a small amount of research on django, and briefly described the model, template, view (M.T.V.) pattern that django applications follow.  Thus the process of creating our initial architecture proceeded smoothly although perhaps it would have been nice to discuss option other than Django more in depth as a group.
+
+
+Initial Refinement of the Architecture
+Determining the scope of the architecture was a key issue that we found ourselves confronting again and again.  During the initial refinement process, this recurring issue seemed problematic, but in retrospect, it was probably good or at least necessary that we were continually re-considering the scope of the architecture.  Continually re-considering the scope surely helped make our architecture report better by keeping it within scope.
+One of the significant successes of this stage in our project (the process of writing and developing the preliminary architecture) was that we had fairly little backtracking to do during the refining project.  Although we faced significant challenges and often found ourselves filling in holes in our understanding of the architecture, progress always seemed to be going forwards.  Never in the development of our architecture did misconception or misunderstanding force us to rethink work that had previously seemed completed.  We attribute this success to adequate research into the django framework, Eli’s knowledge of relational databases, the fairly simple nature of our project, and (perhaps most importantly) group discussions.
+Thus, our group agrees that the refinement of our architecture was a very successful process. We found that the most effective way to refine architecture was through discussion.  Before meetings, we did research individually on relevant technologies (such as Django and MySQL) and formed simple (and oftentimes simplistic) ideas of the architecture in our own minds.  Then during the group meetings, we would discuss our own notions of how the architecture should work.  The process of discussion forced us to elaborate on the details and find flaws.  In addition, we could combine our individual understandings of technologies to form a complete understanding of the relevant technologies (for instance, combining my (Chet’s) understanding of Django with Eli’s understanding of relational databases was instrumental in creating a successful preliminary architecture).
+Initially, we struggled to come up with an effective way of representing our client side architecture.  It was Eli who made the critical insight that we could visualize our website as a graph with the nodes as web pages and the edges as links between the web pages.  This insight vastly improved the ease with which we could communicate (and think about!) the client side architecture.
+A second refinement came when Eli forced me to elaborate on how the M.T.V. model of Django produces a complete web page.  Armed with the resulting details, we were able to create a flowchart between the various runtime components.
+Having watched the architecture review of the group including Siyao, Robin, Skyller, and Amy, we decided that we needed to flesh out the architecture of our database tables.  Although there were significant disagreements between between me and Eli, Eli’s understanding of databases and his clear and concise explanation of some of the key issues of relational databases prevailed.
+Finally, having defined individual database tables as architectural objects, and having previously defined a web page as an architectural object, we decided to treat individual templates, views and models as architectural objects.  After all, every web page requires a view, a template, and (sometimes) a model.  Therefore it made sense to classify the views and templates as objects.
+Thus, the refinement of our architecture was a success largely because of productive group meetings.
+
+
+Component Design Analyses
+There was significant overlap between architectural review and our component design analyses.  We agree that our biggest problem with component design analyses was that we did not spend enough time as a group discussing component design.  Most of the component design analysis fell into the category of prototyping through tutorials.  I followed several tutorials that showed, for instance, the interaction between the the view and the model, and this gave me the confidence that the design of our architectural components would be feasible.  Thus as a group, although we regret not spending as much time meeting to discuss component design, we have a fair amount of confidence that the design of our components is feasible.
+
+
+Creating Draft Architectural Description
+Our initial architecture deviated from our plan by two days and ended up having multiple holes (such as omission of server resources).  In retrospect, our planned schedule was probably a bit too ambitious especially considering the amount of time we had to spend doing research and the fact that the creation of the draft overlapped with the week of midterms.  As the person primarily in charge of writing the draft, I regret not communicating to the other members of my group that I was going to be unable to finish the draft on schedule.  Had I communicated this, they might have been able to jump in and help, and we would have only been off schedule by one day instead of two.
+In retrospect, the omissions in our architectural draft (such as failing to mention server resources) seemed to be glaring and obvious.  How could we have missed something so seemingly obvious!  However, as a group we seem to have been biased, and it took a set of critical eyes (Lukes group) to spot the holes. Thus, the presence of such glaring omissions illustrates the necessity of architectural review.
+
+
+Studying for Design Review
+One of the most difficult issues we faced in preparing for the design review was a time crunch: Luke’s group submitted their initial architecture to us fairly late.  However, the process we used to prepare for the design review was fairly effective, and we agree that overall, our review of Luke’s group was OK.  We started the preparation process by preparing notes individually.  We then met as a group and decided that Eli would lead the flow of discussion.  Our main regret was that we did not form a preliminary classification of our comments according to must fix/should fix/clarification/question.  Doing so would have lessened the burden on Michael who had to make split second decisions during the architectural review on how to classify our comments.
+
+
+Design Review of Luke’s Group
+Our review flowed very well which followed from good preparation.  However, we were forced to ask many clarifications and simple questions which would have been better answered by email beforehand (we did not have the opportunity to do this because of the time crunch).  Lastly, classification of our comments according to must fix/should fix/clarification or question would have been a lot easier if we had been better prepared.
+
+
+Design Review of Our Architecture by Luke’s group
+The review of our architecture was helpful in that Luke’s group discovered several major holes in our architecture that were important to patch.  We felt that we were prepared to answer most of their questions and were not defensive about our architecture.
+
+
+Revising Our Architecture to Address the Issues
+The two main problems we faced in revising our architecture was a time crunch and poor communication with Luke’s group.  In terms of communication, at first Luke’s group required that we create a prototype without specifying the purpose of said prototype.  As it turned out, it was not actually necessary to create a prototype, and this communication issue should have been resolved sooner by asking for clarification during the review meeting.  Without a time crunch, we would have found the revision process a bit smoother and would have had more time to proofread.
+        However, overall, the revision process went fairly smoothly.  We first met as a group to discuss what changes we were going to make and then divided the work evenly among the group members.  After making these changes, Michael and Eli completed the remaining tasks for the final architecture, and we were finished!
+
+
+Planning and Ongoing Management
+In terms of time management, we certainly had difficulties meeting deadlines and adhering to our planned schedule.  Some of this had to do with poor communication, some had to do with unrealistic expectations, and especially at the end of our architecture process, we had difficulty because the group we were working with was late submitting their architecture to us.
+        As a group, we feel that we divided the workload fairly evenly.  However, we also agree that the research in Django could have been divided more evenly as most of it was mostly performed by the author.
+In our previous post-mortem, we came to the conclusion that one of our key problems was that we did not prepare enough before our meetings.  We certainly changed our habits successfully in this respect. For instance, research and many other tasks were done before meetings, and this was certainly helpful in producing our architecture.  It is the author’s opinion that as we head into the design stage, we should redouble our efforts to prepare beforehand, especially in terms of research.  As we head into the design stage, it will be imperative that all the team members understand the relevant technologies.
+
+
+Overall Project as an Education Exercise
+As a group, we agree that we learned a lot from the process of creating our architecture.  The most important was gaining a familiarity with what architecture actually meant.  We started with only a hazy feeling for what architecture but ended with a more confident grasp of the scope and importance of architecture.
+        Certainly an important side benefit of creating the architecture was learning about Django and relational databases. The general model view controller pattern that Django follows seems to be a very useful abstraction that could be applied to a great number of problems.
+        Creating the architecture highlighted the importance of review.  Without the review, our final architecture might have included a number of major omissions.
+        Finally, this exercise illustrated the great value of informal discussion in finding a solution to a hard problem.  Many of the problems we faced would have been quite daunting to an individual working alone, but as a group, we were able to combine our knowledge and insights into a cohesive vision of the architecture.

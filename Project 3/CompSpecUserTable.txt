@@ -1,0 +1,84 @@
+﻿Eli Gadd
+CS 181F
+ 
+User Table Database Model - Component Specification
+ 
+Component Description
+All of the data for our web application will be stored in database tables stored on an SQL server. In our architecture, we describe the five tables that will together represent all of this information. The User Table is responsible for storing the information associated with each user account on our web application. Specifically, this table will store the username, email address, and password of each user, as well as which user groups they are members of, and which flashcard sets (stored in another table) each user owns. The table will be maintained through the use of a Django model, which will provide the interface for adding to, removing from, and updating the table.
+ 
+Component Requirements
+This component, the User Table Model, must adhere to the following requirements.
+1. Allow for the creation of a new user, with a username (unique), email address (unique), and password.
+2. Allow a user’s password to be updated.
+3. Restrict a user’s password to some (yet undefined) constraints for security purposes.
+4. Allow a user’s email address to be updated.
+5. Prevent the use of an email address already associated with another user in the table.
+6. Allow a new set of flashcards to be added to a user’s library.
+7. Prevent a user from owning the same card set twice.
+8. Allow a new group to be added to a user’s group list.
+9. Prevent a user from joining a group twice.
+10. Allow a set of flash cards to be deleted from a user’s library.
+11. Allow a group to be removed a user’s group list.
+ 
+Component Interface
+The Django model for this database table must support the following functionality:
+1. Given a username, return the user’s email address.
+2. Given a username, return sets the user owns.
+3. Given a username, return the groups the user is a member of.
+4. Given a username and password, verify that this user is in the table.
+5. Add a new username, email address, and password.
+6. Given a username and a set, make sure that the user owns that set, by adding it if necessary.
+7. Given a username and a group, make sure that the user is a member of the group, by adding it if necessary.
+8. Given a username and email address, update the user’s email address if it is not already in the system.
+9. Given a username and password, update the user’s password if it meets (yet undefined) constraints.
+10. Given a username and a set, make sure that the user doesn’t own that set, by deleting it if necessary.
+11. Given a username and a group, make sure that the user isn’t a member of that group, by deleting it if necessary.
+This listing of functions should allow for all required interactions between webpages and the user table.
+________________
+Chet Weger
+CS 181F
+Create/Modify Page – Component Specification
+
+
+Component Description
+The Create/Modify page will allow the user to create, organize, and modify existing flashcards and flashcard sets. Upon loading the page, the user will be able to import existing flashcard sets from his user library (stored in the MySQL database). The user will be able to modify the contents of these imported flashcards as well as change their order within the set. In addition, the user will be able to add entirely new flashcards as well as delete flashcards. Finally, the user will be able to name the set of flashcards produced, and save it, updating the MySQL database.
+
+
+Component Requirements
+This component will adhere to the following requirements:
+1. Allow user to import existing sets from user library (stored in MySQL database)
+2. Allow user to add, delete, and modify flashcards
+3. Allow user to change the order of the flashcards
+4. Allow the user to name his newly created flashcard set
+5. Allow the user to save his changes, thus creating a new set in his personal library, and updating the MySQL database
+
+
+Component Interface
+To arrive at the page, one clicks on a hyper-link from the user profile page. Information will be entered into the database through the use of forms. Once flashcard sides have been entered into the forms, the information can be submitted to the database through a button click. To prevent having to reload the web page every time this is done, we can use Ajax techniques. The Ajax techniques will handle the connection between the web page HTML5 forms and the Django view. Then, the Django view will make calls to the appropriate model which in turn communicates with the MySQL server to update the specified database table.
+________________
+Michael Vassilevsky
+CS 181F
+
+
+User Profile Page - Component Specification
+
+
+Component Description
+The User Profile page will access the User Table to display a list of the logged-in user’s existing card sets and groups of which the user is a member. On this page, the user will be able to send requests to existing groups as well as leave groups. The user will also be able to delete existing card sets. There will be a link labeled “Create/Modify” that leads to the Edit page, a link labeled “View” next to each card set that leads to the View Card Set page, as well as links to the Public Database, Group Library, and User Preferences pages. The user will be able to log out from this page.
+
+
+Component Requirements
+This component must adhere to the following requirements:
+
+
+1. Allow for access to the create/edit page of a set.
+2. Allow the user to delete existing card sets.
+3. Allow for access to the user preferences page.
+4. Display groups a user belongs to, and let the user access them.
+5. Let a user send requests to groups to join.
+6. Let a user leave groups.
+7. Let a user log out.
+
+
+Component Interface
+The page will be populated by querying the database upon loading. The page will be written in HTML. There will be hyperlinks to the Create/Edit, Public Database, Group Library, and User Preferences pages. There will be buttons for leaving groups and sending requests to them, which will be written in HTML5, and which will modify the database.

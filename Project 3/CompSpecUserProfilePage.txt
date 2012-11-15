@@ -1,0 +1,26 @@
+﻿Michael Vassilevsky
+CS 181F
+
+
+User Profile Page - Component Specification
+
+
+Component Description
+The User Profile page will access the User Table to display a list of the logged-in user’s existing card sets and groups of which the user is a member. On this page, the user will be able to send requests to existing groups as well as leave groups. The user will also be able to delete existing card sets. There will be a link labeled “Create/Modify” that leads to the Edit page, a link labeled “View” next to each card set that leads to the View Card Set page, as well as links to the Public Database, Group Library, and User Preferences pages. The user will be able to log out from this page.
+
+
+Component Requirements
+This component must adhere to the following requirements:
+
+
+1. Allow for access to the create/edit page of a set.
+2. Allow the user to delete existing card sets.
+3. Allow for access to the user preferences page.
+4. Display groups a user belongs to, and let the user access them.
+5. Let a user send requests to groups to join.
+6. Let a user leave groups.
+7. Let a user log out.
+
+
+Component Interface
+The page will be populated by querying the database upon loading. The page will be written in HTML. There will be hyperlinks to the Create/Edit, Public Database, Group Library, and User Preferences pages. There will be buttons for leaving groups and sending requests to them, which will be written in HTML5, and which will modify the database.

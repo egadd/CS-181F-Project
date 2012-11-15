@@ -1,0 +1,22 @@
+﻿Chet Weger
+CS 181F
+Create/Modify Page – Component Specification
+
+
+Component Description
+The Create/Modify page will allow the user to create, organize, and modify existing flashcards and flashcard sets. Upon loading the page, the user will be able to import existing flashcard sets from his user library (stored in the MySQL database). The user will be able to modify the contents of these imported flashcards as well as change their order within the set. In addition, the user will be able to add entirely new flashcards as well as delete flashcards. Finally, the user will be able to name the set of flashcards produced, and save it, updating the MySQL database.
+
+
+Component Requirements
+This component will adhere to the following requirements:
+
+
+1. Allow user to import existing sets from user library (stored in MySQL database)
+2. Allow user to add, delete, and modify flashcards
+3. Allow user to change the order of the flashcards
+4. Allow the user to name his newly created flashcard set
+5. Allow the user to save his changes, thus creating a new set in his personal library, and updating the MySQL database
+
+
+Component Interface
+To arrive at the page, one clicks on a hyper-link from the user profile page. Information will be entered into the database through the use of forms. Once flashcard sides have been entered into the forms, the information can be submitted to the database through a button click. To prevent having to reload the web page every time this is done, we can use Ajax techniques. The Ajax techniques will handle the connection between the web page HTML5 forms and the Django view. Then, the Django view will make calls to the appropriate model which in turn communicates with the MySQL server to update the specified database table.

@@ -1,0 +1,20 @@
+﻿Michael Vassilevsky
+
+
+User Profile Page - Test Plan
+
+
+Black box tests
+1. Create a user, then attempt to create a card set by clicking the “Create New Set” button. This tests whether the page correctly links to the “Create/Modify” page for a new card set. With automation, this could be done with multiple users trying to access the page at the same time. This would test whether the system can carry significant loads.
+2. After creating a card set, edit it by clicking the “Modify” button. This tests whether the page links to the “Create/Modify” page for each set correctly. With automation, a user could quickly access several sets simultaneously.
+3. After creating a card set, delete it by clicking the “Delete” button. This tests set deletion functionality. Load testing could be done with automation.
+4. Create a user that belongs to a group, and leave the group by clicking the “Leave Group” button. This tests the functionality of the page’s group management. With automation, a user that belongs to many groups could leave many of them in succession.
+5. Click on the hyperlink to the “User Preferences” page. This tests whether the link is correct.
+6. Have a logged-in user log out by clicking the “Log Out” button, then close the browser, and navigate to the site again - the user should not be logged in. This tests log out functionality.
+
+
+White box tests
+1. Test the list function by sending an improper user ID.
+2. Test delete_set by trying to delete a nonexistent set.
+3. Test leave_group by attempting to leave a group to which the user does not belong.
+4. Test to_fc by attempting to modify a nonexistent set.g

@@ -1,0 +1,23 @@
+﻿Michael Vassilevsky
+
+
+Design Review Prepared Notes
+
+
+Django Models:
+1. general: How would IDs be generated?
+2. userTable: How would the SetID be generated? Also, is it an identifier for a set (as its name implies) or for a user (as described)?
+3. userTable: get_absolute_url returns a URL based on its SetID. How would this URL be formatted? It seems better to also use the set name in URL generation, so it would somehow be included in the generated URL.
+4. userSetTable: Why is the class called userTable?
+5. userSetTable: get_absolute_url doesn’t use the set name. If the Set ID doesn’t have an obvious relation to the name of the set, users may not be able to easily know what the URL links to.
+6. cardTable: Why is the class called userTable?
+
+
+Create/Edit Set Page:
+1. Where on the page does the user enter the title and slug?
+2. Where is the title of the card stored? And is it displayed on the card anywhere?
+3. Where (if anywhere) is the slug stored?
+4. What happens when a user enters a slug that is identical to the slug of an already existing card?
+5. How does list display the flash cards? Does it use any of the information inside the flash card (the front or back)?
+6. How does create_fc get the order of the card?
+7. How does update_fc get any of the changed parameters of the card (changed order or content)?

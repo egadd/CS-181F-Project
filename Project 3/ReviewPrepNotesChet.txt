@@ -1,0 +1,44 @@
+﻿Chet Weger
+Review Notes
+
+
+Django Models (Eli):
+Component Specifications: 
+[general comment:] You seem to only be describing one table in detail here.  But in the other parts, you are describing 3.
+        [component descriptions]:
+        [component requirements]:
+        [component interface]:
+
+
+Component Design: Django Models:
+[general comment:] So you are describing three database tables, and and you have three different models, but it looks like you only have three different classes.  Shouldn’t each model have its own class.  Another general comment: what data format are the ID’s (e.g. userID, setID, cardID)
+[model: userTable:]
+[model: userSetTable:]
+[model: cardTable:]  So for my list() view, I want to create a list of flashcard objects ordered by cardID (I also need to enforce that this is an integer value, but that's another issue).  Now, as it turns out, I could make requests from the database and order them myself, but I think it makes sense from a design perspective that you would want such a routine stored at the highest level possible: the model itself.  Therefore, if you could add such a routine (I'm calling it getSortedCardList(set): this is a function for cardTable), that would be great.  Also, I think michael might have some very similar functions if I remember correctly.
+
+
+Component Test Plan: Models:
+[general comments:]
+[summary:]
+[testing framework:] I think you could be more explicit as to test modules you will be using.
+[test case index:] Can you differentiate between your black box and your white box testing (or at least do that at some time)?
+[test descriptions:] In general, I was not sure what the precise situation was that you would be testing.  You have to perform queries on your database tables to test your models, but it wasn’t clear to me how you would be setting this situation up.
+
+
+User Profile Page (Michael):
+Component Specification: User Profile Page:
+[general comments:]
+        [component descriptions]: It seems that at least the way your design has evolved, you may have two interfaces with the create/edit page: a hyperlink to update, and a button that creates a new a set and redirects to the create/edit page.
+        [component requirements]: What happens when a user tries to log out or view user preferences?
+        [component interface]: To create and delete sets, don’t you need to also update the database?
+
+
+Component Design: User Profile Page:
+[general comments:]
+        [description of module:]
+        [urls:] I was a bit confused by your url map and the way sometimes one url maps to two views.  My understanding is that each url should map to its own view, but if you are using redirection, you should call the HttpResponseRedirect() function (and call a new url inside it).
+        [views:] Where does log_out() redirect?  I am confused about the to_fc() function.  I don’t understand how one of them creates a url hyperlink...
+
+
+Component Test: User Profile Page:
+[general comments:] You are missing some sections.  Also, I think it would be helpful to explain in more depth how you are setting up the situation you are testing (and what the precise situation is).

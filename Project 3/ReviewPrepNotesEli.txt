@@ -1,0 +1,53 @@
+﻿Eli Gadd
+CS 181F
+
+
+Design Review Prepared Notes
+
+
+User Profile Page (Michael)
+
+
+Component Specification
+1. You reference the other web pages that you will interface with, but do not mention that you will interact with the database models, nor describe any sort of interface for that interaction.
+2. These references to the database are necessary because much of your functionality is based on pulling information from or updating information in the database.
+3. How will the component handle errors? The requirements should specify some degree of error handling process.
+
+
+Component Design
+1. In Description: Modify -> Edit
+2. What are the library functions referring to? I imagine that these are existing functions that you will rely on, but this should be clarified.
+3. You have a view for logging out, should there be one for accessing user settings?
+4. Describe the templates in more detail.
+
+
+Component Test Plan
+1. This needs a description of the overall testing theory.
+2. This needs a description of the testing framework.
+3. You need an index of your test cases, listed out.
+4. All of your test cases need exact qualifications for what correct behavior is.
+5. How will this be automated?
+6. You test all of the internal functions with bad inputs, why not verify that they work with good inputs as well?
+
+
+Create/Edit Page (Chet)
+
+
+Component Specification
+1. How will the component handle errors? The requirements should specify some degree of error handling process.
+2. Typo: Third line from end - and then and then.
+3. Describe which models will be interacted with and what kind of information will be transferred in these interactions.
+
+
+Component Design
+1. Users shouldn’t be responsible for generating a unique slug. This needs to happen on our end.
+2. Please reformat comments to be more easily read (spacing).
+3. Describe the templates in more detail.
+4. What is the underlined comment about updating other databases? What other database? Who will update them?
+
+
+Component Test Plan
+1. django -> Django.
+2. Typo: Description: coverge() -> coverage()
+3. White box testing: what is correct, how is this decided, how are these tests setup? Needs to be finished.
+4. For 1.7 and 1.8, what is the expected behavior for these errors?

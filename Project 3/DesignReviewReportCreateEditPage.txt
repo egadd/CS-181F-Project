@@ -1,0 +1,40 @@
+﻿Report Author & Review Scribe: Michael Vassilevsky
+Component Designer: Chet Weger
+
+
+Report on the Design Review of the Create/Edit Page
+
+
+Summary of Process
+The Edit Page Review was at 4:15 on Tuesday, December 14th. Michael Vassilevsky was the scribe. This module was designed by Chet Weger.
+
+
+Document: Component Specification
+1. The component interface should describe the database components with which the page will interact.
+1. Status: Must fix
+
+
+Document: Component Design
+1. The database does not currently store titles for cards. It was decided to not have a title and display the data on the front of the card instead.
+1. Status: Must fix
+1. The section describing the templates should be more detailed.
+1. Status: Should fix
+1. The code comments could be reformatted to take up multiple lines, and Django should always be capitalized.
+1. Status: Comment
+1. Clarify that list() looks at the card table, asks for every card, reads their contents, then displays some of the information from the front of the card
+1. Status: Must fix
+1. Clarify that create_fc() information comes from user input, through the request.
+1. Status: Must fix
+
+
+Document: Test Plan
+1. Add a test case for an incorrect set URL.
+1. Status: Should fix
+1. Describe white box tests in greater detail.
+1. Status: Must fix
+1. Add the expected behavior for each test case.
+1. Status: Must fix
+
+
+Conclusion
+Approved with the required changes.

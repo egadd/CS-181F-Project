@@ -1,0 +1,40 @@
+﻿Report Author & Review Scribe: Chet Weger
+Component Designer: Eli Gadd
+
+
+Report on the Design Review of the Models
+
+
+Summary of Process
+This design review took place at around 4:15 on Tuesday, December 14th.
+
+
+Document: Component Specification
+1. Add additional tables as needed.  
+1. Status: Must fix
+1. Modify specifications to reflect changes in module.
+1. Status: Must fix
+
+
+Document: Component Design
+1. The userID is created in the user registration. 
+1. Status: Resolved in meeting
+1. Change class names to reflect purpose.
+1. Status: Must fix
+1. ID’s should be represented as numbers.
+1. Status: Resolved in meeting
+1. Should Eli or Chet deal with sorted flashcard object? (We decide Chet.)
+1. Status: Resolved in meeting
+
+
+Document: Component Test Plan
+1. Provide more information on test modules and how they will work etc.
+1. Status: Should fix
+1. Differentiate between between white box and black box testing.
+1. Status: Must fix
+1. Explain how queries to the database tables will be made through the testing framework.
+1. Status: Should fix
+
+
+Conclusion
+Approved with the required changes.

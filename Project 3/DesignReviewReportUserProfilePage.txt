@@ -1,0 +1,78 @@
+﻿Report Author & Review Scribe: Eli Gadd
+Component Designer: Michael Vassilevsky
+
+
+Report on the Design Review of the User Profile Page
+
+
+Summary of Process
+        On December fourth, our group met to perform the design review of the user profile page component, as designed by Michael Vassilevsky. Michael produced a preliminary specification for the component, followed by a complete preliminary design and a preliminary test plan. The other group members (Eli Gadd and Chet Weger) were supplied with the final version of these preliminary documents roughly 24 hours before the review. These group members looked over the documents and prepared detailed notes on the issues that they noticed, and then during a meeting the next day, brought up these issues as they were reached in the documents. The group as a whole discussed each issue that was brought up, clarifying any misconceptions, and then decided how important the issue was. Eli Gadd was the scribe for this session; he recorded the issues brought up and the decisions reached. The group then decided on the final state of the documents, agreeing that each was accepted provided that Michael made the recommended changes.
+
+
+Document: Component Specification
+Component Description
+1. Issue: Separate “Create/Modify” link so that instead, each card set has an “Edit” button and there is only one “Create Set” button
+1. Status: Must Fix
+1. Question: What happens when the hyperlinks to logout or the user preferences are followed?
+1. Status: Resolved in meeting
+
+
+Component Requirements
+1. Question: How will your component respond to incorrect urls, other errors?
+1. Status: Should fix
+
+
+Component Interface
+1. Issue: What database models will be interacted with? What kind of information will be pulled from these interactions?
+1. Status: Must fix
+
+
+Document: Component Design
+General
+1. Issue: Change keyword "modify" to keyword "edit" throughout for consistency sake.
+1. Status: Must fix
+
+
+urls.py
+1. Defect: Two different pages have the same URL (set/[set]). This is not allowed.
+1. Status: Must fix
+1. Issue: Using /set/[set] and /group/[group] takes these URLs away from other components where they might make more sense. Make these URLs more unique and more descriptive of what they are doing.
+1. Status: Must fix
+
+
+Templates
+1. Issue: Describe in more detail.
+1. Status: Must fix
+
+
+Views
+1. Question: Why does log_out have a view when user preferences does not?
+1. Status: Resolved in meeting
+1. Issue: to_fc(request) is a misunderstood function. There should be a create_set function that creates a new set in the necessary database tables, and then another function that navigates to the new sets URL.
+1. Status: Must fix
+1. Issue: to_fc(request, set) can simply use the list function in Chet’s component. Thus, this function can be removed.
+1. Status: Must fix
+
+
+Document: Component Test Plan
+General
+1. Defect: Add framework description, index, and testing summary section.
+1. Status: Must fix
+
+
+Black Box Testing
+1. Defect: Add information about how these tests will be set up.
+1. Status: Should fix
+
+
+White Box Testing
+1. Defect: Add information for the correctness of these tests will be determined.
+1. Status: Must fix
+1. Defect: Add information about how these tests will be set up.
+1. Status: Should fix
+1. Issue: Add tests that verify the functions perform well given good inputs.
+1. Status: Should fix
+
+
+Conclusion
+        The review team agreed that the documents would be accepted on the condition that the above “Must Fix” and “Should Fix” changes are all completed.

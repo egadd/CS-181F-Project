@@ -1,0 +1,60 @@
+﻿Michael Vassilevsky
+
+
+User Profile Page - Component Design
+
+
+Description of Module
+The User Profile page enables the user to manage their card sets and group memberships. There is a hyperlink to the User Preferences page. The module consists of one page that displays the titles of the user’s card sets and the names of the user’s groups. Clicking on a group title leads to the Group Library page. There is a “Leave Group” button by each group title. Clicking on a card set title leads to the view page for the card set. There is a hyperlink button next to each card set title, labeled “Edit”, that leads to the Edit page for that set. Next to each card set title is a button labeled “Delete”, which deletes the card set. Finally, there is a button labeled “Create New Set”, which leads to the Edit page for a new card set.
+
+
+urls.py
+Maps the URLs to the view functions.
+
+
+“.../list/[user]/”                                → list(request, set), log_out(request)
+“.../list/[user]/set/delete_set/[set]/”                → delete_set(request, set)
+“.../list/[user]/group/leave_group/[group]/”        → leave_group(request, userID, groupName)
+“.../list/[user]/set/new_set/[set]”                → to_set(request)
+
+
+Template
+The module contains one template, which displays the list of card sets and the list of groups. It displays two tables, one populated with the user’s card sets, and one with the group of which the user is a member.
+
+
+Views
+The module uses six view functions.
+
+
+list(request, userID)
+Purpose: Displays a list of the user’s sets and groups. Each set has a hyperlink to the Create/Modify page associated with it. There is a hyperlink to each group’s Group Library page.
+Library functions: render() function returns an HttpResponse while loading a template,
+context = user.getSets(userID) gets the list of sets,
+context = user.getGroups(userID) gets the list of groups.
+
+
+log_out(request)
+Purpose: Logs the user out, deletes the cookie storing the user’s login information. Called by clicking the “Log Out” button.
+Library functions: HttpResponseRedirect() reloads the page.
+
+
+delete_set(request, set)
+Purpose: Deletes a set. Each card is deleted from the set, then the set itself is deleted from the user set table. Called by clicking on the “Delete” button by a set.
+Library functions: HttpResponseRedirect() reloads the page.
+delete() deletes the cards from the set, then deletes the set.
+
+
+leave_group(request, userID, groupName)
+Purpose: Removes the user from the group. Removes the user’s group membership from the user table, and user from the group in the group table. Called by clicking the “Leave Group” button.
+Library functions: HttpResponseRedirect() reloads the page.
+delete() deletes the group from the user’s list of groups, and the user from the group’s list of users.
+
+
+create_set(request)
+Purpose: Creates a new set, adding a set to the user table and user set table. Called by clicking the “Create New Set” button.
+Library functions: new_set = set.create enters the new set into the database.
+
+
+to_new_set(request, set)
+Purpose: Gets the URL for a new set, and redirects the user to it. Called by clicking the “Create New Set” button after the rest of create_set executes.
+Library functions: HttpResponseRedirect() reloads the page.

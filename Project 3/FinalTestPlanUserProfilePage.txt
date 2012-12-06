@@ -1,0 +1,52 @@
+﻿Michael Vassilevsky
+
+
+User Profile Page - Test Plan
+
+
+Testing Summary
+        The User Profile page will be tested using both black box and white box tests, which will be performed using Django. The black box tests will test whether the component performs as described in the specification, and the white box tests will test the view functions to ensure that they work as expected.
+
+
+Testing Framework
+        The component will be tested using django.test, a unit test module. The use of this module will enable us to automate the tests. The tests will be written in and run from a tests.py file.
+
+
+Test Case Index
+Black box tests:
+1. Create a card set
+2. Access the Edit page for a set
+3. Delete a set
+4. Leave a group
+5. Go to the User Preferences page
+6. Log out
+White box tests:
+1. list
+2. delete_set
+3. leave_group
+4. create_set and to_new_set
+
+
+Black box tests
+
+
+1. Create a user in a dummy database, then attempt to create a card set by clicking the “Create New Set” button. This tests whether the page correctly links to the “Create/Modify” page for a new card set. With automation, this could be done with multiple users trying to access the page at the same time. This would test whether the system can carry significant loads.
+2. After creating a card set in a dummy database, edit it by clicking the “Edit” button. This tests whether the page links to the “Edit” page for each set correctly. With automation, a user could quickly access several sets simultaneously.
+3. After creating a card set, delete it by clicking the “Delete” button. This tests set deletion functionality. Load testing could be done with automation.
+4. Create a user that belongs to a group, and leave the group by clicking the “Leave Group” button. This tests the functionality of the page’s group management. With automation, a user that belongs to many groups could leave many of them in succession.
+5. Click on the hyperlink to the “User Preferences” page. This tests whether the link is correct.
+6. Have a logged-in user log out by clicking the “Log Out” button, then close the browser, and navigate to the site again - the user should not be logged in. This tests log out functionality.
+
+
+White box tests
+
+
+1. Test the list function by sending an improper user ID. The function should give a “nonexistent user” error.
+2. Test the list function by sending it the ID of a user. It should display the user’s sets and group memberships.
+3. Test delete_set by trying to delete a nonexistent set. The function should give a “nonexistent set” error.
+4. Test delete_set by deleting a set in the database. The set should no longer be in the database.
+5. Test leave_group by attempting to leave a group to which the user does not belong. The function should give a “user is not member of group” error.
+6. Test leave_group by having a user leave a group of which he is a member. The association between the user and group should no longer exist.
+7. Test create_set by having a nonexistent user create a set. The function should give a “user does not exist” error.
+8. Test to_new_set by attempting to navigate to a nonexistent set. The function should give a “nonexistent set” error.
+9. Test create_set and to_new_set by having a user create a new set. The user should be at the Edit page for a new set.

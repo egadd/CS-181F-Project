@@ -1,0 +1,99 @@
+﻿Eli Gadd
+CS 181F
+
+
+Component Test Plan: Django Models
+
+
+Testing Summary
+        Because these models are so nearly identical, one test plan will be developed for all three models. The testing of these models breaks down into two categories: verification of basic database operations, and testing of responses to special circumstances applied to the system. Because so little of these components is left up to the programmer, most this testing will be a simple verification that Django performs under different circumstances as we would expect it to.
+
+
+Testing Framework
+        Django provides a method for creating test cases and running assert statements to verify the state of the system, through the use Doctests. With Doctests, we can add comments that contain simulations of a python session, as the functions within the class should produce. These tests can then be automatically run, and their correctness reported by Python. Through this, we can apply operations to the database tables and then verify that lookups return expected output. For the testing of how Django handles extraneous circumstances, some can also be run through tests.py, while others will require manual edits to the settings file.
+
+
+Test Case Index
+Black Box Test Cases
+1. userTable
+1. Add entry with userID
+2. Add entry with password
+3. Add entry with email
+4. Add entry with a group
+5. Add entry with a card set
+6. Add entries with multiple fields
+7. Update userID
+8. Update password
+9. Update email
+10. Update group
+11. Update card set
+12. Add a group to the group list
+13. Add a set to the set list
+14. Delete entry by userID
+1. userSetTable
+1. Add entry with a setID
+2. Add entry with a setName
+3. Add entry with an owner
+4. Add entry with a card
+5. Add entries with multiple fields
+6. Update setID
+7. Update setName
+8. Update owner
+9. Update card list
+10. Add a card to the card list
+11. Delete entry by setID
+1. cardTable
+1. Add entry with a cardID
+2. Add entry with a set
+3. Add entry with front data
+4. Add entry with back data
+5. Add entries with multiple fields
+6. Update cardID
+7. Update set
+8. Update front data
+9. Update back data
+10. Delete entry by cardID
+
+
+White Box Test Cases
+1. userTable
+1. Navigate to user profile
+2. Response to invalid database connection
+1. userSetTable
+1. Navigate to edit set page
+2. Response to invalid database connection
+1. cardTable
+1. Navigate to edit card page
+2. Response to invalid database connection
+
+
+Test Descriptions
+The test cases listed above break into a few basic test approaches, and will be described in corresponding chunks.
+
+
+Adding entries to the tables with a single data field
+We want to test that entries can be added to the tables with only a single field. Any database table should support the addition of new entries. As such, for each data field in each model, we will attempt to add an entry to the table with only that field completed, and then we will verify that we have added an item to the table as expected. If a query to the database finds the item, we have succeeded in adding that entry. This will confirm that each field holds the desired kind of data.
+
+
+Adding entries to the tables with multiple fields
+We want to test that entries can be added to the tables with multiple fields. Entries will always be created with more than one entry (at least an ID number and a name), so we will create entries in each table from all combinations of data fields and then verify that they are all there, and that the entries have the same data that we put them in with. If this works, the models will meet the specification requirement of creating database entries for users, for new sets, and for new cards.
+
+
+Updating entries in the database
+We want to test that entries in the database can updated. After adding entries to each model with all fields complete, we will run queries that update each field (individually, testing for correctness in between) and then verify that the other fields in the updated entry have not changed and that the desired field has changed as desired.
+
+
+Adding to List Data Fields
+The userTable and userSetTable have data fields that are lists of information. We want to make sure that these lists can be updated. As such, once entries have been put into the database, we will issue queries that will add more items to these lists, and we can then query and verify that the lists have the expected number of items in them, and that those items are what we expect.
+
+
+Delete entries from the database
+We want to test that entries can be removed from the database. We will first add entries to the database, with various arrangements of fields complete (all with an ID number). We will then run queries that should delete the entries from the database, based on their ID number. We can then check that these entries are not in the database.
+
+
+Navigation Functions
+We want to test the get_absolute_url functions of each model. Each model offers a function that returns the URL to navigate to a given user, set, or card’s webpage, each defined elsewhere. From designing the models, we know the form that the URL should take, so given a request, we can predict the exact string that we would get in response. As such, we can put in an entry to each, request the URL to that entry, and confirm that it is what we expected.
+
+
+Handing an Invalid Database Connection
+We want to test that the models behave as expected when the database connection breaks. To simulate this, we will change the file path for the database in our Django system, and run the tests above. Given that this falls outside of the models design, we will expect a corresponding error from Django, indicating that the database is invalid.

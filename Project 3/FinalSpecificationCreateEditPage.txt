@@ -1,0 +1,23 @@
+﻿Chet Weger
+CS 181F
+
+
+Create/Edit Module – Component Specification
+
+
+Component Description
+The Create/Edit module will allow the user to create, organize, and modify existing flashcards contained in a flashcard set. This module is made up of two pages: a list page that lists all the flashcards in a set and an edit page where the user can edit a particular flashcard.  A user’s sets are displayed on the user profile page.  When the user clicks on one of these sets (or clicks on another button that creates a new empty set), he is redirected to the list page. From here, the user can modify existing cards and create new cards.  The user can follow hyperlinks to the edit page to edit individual cards as well as create new cards and be redirected to the edit page.  In the edit page, the user will also be able to change the order of an individual cards. Finally, the user will be able to delete flashcards.  All these changes are saved in the sqlite database.
+
+
+Component Requirements
+This component will adhere to the following requirements:
+
+
+1. Allow user to modify existing sets contained within the user library
+2. Allow the user to add content to newly created sets
+3. Allow user to add, delete, modify, and reorder flashcards contained in a set
+4. Save all updates in the sqlite database
+
+
+Component Interface
+To arrive at the page, one clicks on a hyperlink from the user profile page. Information will be entered into the database through the use of html forms. Once flashcard sides have been entered into the forms, the information can be submitted to the database through a button click.  To avoid having to use Ajax; creating, modifying, renaming, reordering, and deleting flashcards will all be accomplished by navigating to a particular edit page and then performing the desired operation. The Django view will make calls to the appropriate model which in turn communicates with the sqlite server to update the specified database.  Specifically, creating, modifying, reordering, and deleting flashcards will all send queries to the cardTable database table.  Creating a new flashcard will create a new entry in the cardTable.  Modifying a flashcard, will change the front and or back field.  Reordering a flashcard will change its cardID (which also has the dual role of specifying order in the set).  Deleting a flashcard will remove it from the cardTable.

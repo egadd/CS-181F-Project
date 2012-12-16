@@ -1,0 +1,95 @@
+﻿Chet Weger
+
+
+Component Design: Create/Edit Set Page
+
+
+Description of Module
+The “create/edit flashcards” module enables the creation of flashcards in a specific set.  To the client’s perspective, the module consists of two web pages: a list page that shows the entire set and a create page that shows a single card.  The page that shows the entire set displays the cards in sorted order based on a unique identifier (the order slug).  This page also allows users to create new flashcards.  A user will be prompted to enter a slug (which also specifies the order of the card and is named cardID in the cardTable) and to press a create button to create the card.  As soon as the user clicks this button he/she will be redirected to the create page that shows the cardID/slug of the card as well as the front and back fields of the card.  The user can then fill in the information for the front and back fields of the card and press an update button.  When this update button is pressed, the changes are saved, and the page is reloaded.
+From the component’s perspective, this module consists of five view functions in views.py, five url pattern matchings in urls.py, and two templates.  The urls specify which view functions to call, and these functions in turn make queries to the database and access the templates to create the finished web page.
+
+
+urls.py
+An important part of Django is the map between urls and view functions. This mapping is done in the urls.py file. Below I describe this map:
+
+
+“/set/[set]/”                                        → list(request, set)
+“/set/[set]/create/[cardID]/”                        → create_fc(request, set)
+“/set/[set]/card/[cardID]/”                        → show_fc(request, set, cardID)
+“/set/[set]/card/[cardID]/update_card/”        → update_fc(request, set, cardID)
+“/set/[set]/card/[cardID]/delete_card/”                → delete_fc(request, set, cardID)
+
+
+Templates
+My module contains two templates: a template that displays the list of flashcards in the set, and a template that allows a flashcard to be modified.  
+The ‘list’ template will contain several essential features.  A field/form for entering the slug/card order/cardID for a particular flashcard as well as a ‘create’ button will enable the user to create a card.  In addition, the list of cards in the current set will be listed and identified by front text.  These cards will also hyperlink to the ‘edit’ page where they can be modified.  (Finally, the ability to delete a particular flashcard will be accomplished by the ‘edit’ page.)
+        The ‘edit’ template will also contain several essential features.  The forms/fields for editing the cardID, front, and back of the cards will be displayed as well as a button for saving changes and redirecting to the ‘list’ page.
+
+
+Views
+My module uses five view functions.
+
+
+list(request, set):
+# arguments: The first argument is the HttpRequest, and the second is the 
+# unique set identification integer, setID.
+# purpose and functionality: The view function displays the list of flashcards 
+# in the current set by text in the front field. This list of flashcards 
+# contains hyperlinks to all these flashcards where they can be modified. In 
+# addition, new flashcards can be created by entering a cardID, and then 
+# clicking the create button which calls the create_fc() function which in 
+# turn redirects to the fc() page.
+# library functions used: render() function returns an HttpResponse while 
+# loading a template.
+context = fc.FlashCardTable.getSortedCardList(set) # gets list of flashcards sorted by slug
+return render(request, "fc/test.html", context)
+
+
+create_fc(request, set):
+# arguments: The first argument is the HttpRequest (contains information from 
+# user input), and the second is the set number.
+# purpose and functionality: This function creates a flashcard. It accesses 
+# data from the POST method of the HttpRequest.  This contains data necessary 
+# to create a new flashcard entry in the cardTable database table (namely the 
+# cardID).  This view then redirects to the modify_fc() page.
+# libraries: This function adds information to the database table using the 
+# objects.create(set, cardID) function. Here the three arguments are the set 
+# identity, and the order in the set. An HttpResponseRedirect redirects to 
+# modify_fc() page of the flashcard created.
+new_note = Note.objects.create(request['slug']) #enters info into database
+return HttpResponseRedirect(new_note.get_absolute_url()) #.get_absolute_urls() 
+is defined in model
+
+
+show_fc(request, set, cardID):
+# arguments: The third argument is the unique identification of the card being 
+# displayed.
+# purpose: This function simply shows the flashcard. It accesses the detailed 
+# information of the flashcard and shows the front and the back (in html 
+# forms). It lets the front, the back, and the order to be updated. Updating 
+# this would call the update_fc() function. In addition, there is a hyperlink 
+# back to the list() page, and another button that causes the card to be 
+# deleted (redirecting to the list() page).
+# libraries: Similar to the list() page, this page imports the template, 
+# renders it, and returns it with the render() function. To allow the template 
+# to access information from the model, the model is passed into the render 
+# function as context.
+# templates: This view loads the fc_detail.html.
+
+
+update_fc(request, set, cardID):
+# purpose and functionality: This function updates the database to reflect 
+# newly entered information. The user can change all aspects of the flashcard 
+# including the front, the back, and the order. Like the create_fc() function, 
+# this function obtains information submitted by the user by looking at the 
+# HttpRequest.
+# libraries: Like the create_fc function, this function updates the tables 
+# with the .create() function.
+
+
+delete_fc(request, set, cardID):
+# purpose and functionality: This function deletes the current flashcard being 
+# viewed. It then redirects to the list() page.
+# libraries: This function calls the the HttpResponseRedirect([list url]) 
+# function as well as the delete() function (to delete the flashcard 
+# corresponding to the current page).

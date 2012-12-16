@@ -1,0 +1,59 @@
+﻿Eli Gadd
+CS 181F
+
+
+User Table Database Model - Component Specification
+
+
+Introduction
+This document describes the specifications for three of the six Django models required by our product: the userTable, the userSetTable, and the cardTable. Django uses these models as an interface between Django’s Python code and the SQL server that stores the database tables.
+
+
+Component Description
+userTable
+The userTable is responsible for storing the information associated with each user account on our web application. Specifically, this table will store the username, email address, and password of each user, as well as which user groups they are members of, and which flashcard sets (stored in another table) each user owns. 
+
+
+userSetTable
+The userSetTable is responsible for storing the information associated with each set owned by a specific user. Specifically, this table will store the set title, the ID of the user that owns the set, and a list of the IDs of the cards in the set.
+
+
+cardTable
+The cardTable is responsible for storing the information associated with each card. Specifically, this table will store the ID of the set that the card is a part of, the front data of the card, and the back data of the card.
+
+
+Component Requirements
+userTable
+This component, the userTable Model, must adhere to the following requirements.
+1. Allow for the creation of a new user, with a username, email address, and password.
+2. Allow a user’s email address to be updated.
+3. Allow a user’s password to be updated.
+4. Allow a new set of flashcards to be added to a user’s library.
+5. Allow a new group to be added to a user’s group list.
+6. Allow a set of flash cards to be deleted from a user’s library.
+7. Allow a group to be removed a user’s group list.
+8. Allow a user to be deleted.
+
+
+________________
+
+
+userSetTable
+This component, the userSetTable Model, must adhere to the following requirements.
+1. Allow for the creation of a new set, with a title and owner.
+2. Allow a set’s title to be updated.
+3. Allow a new card to be added to a set.
+4. Allow a card to be removed from the set.
+5. Allow a set to be deleted.
+
+
+cardTable
+This component, the cardTable Model, must adhere to the following requirements.
+1. Allow for the creation of a new card, with a set responsible.
+2. Allow a card’s front data to be updated.
+3. Allow a card’s back data to be updated.
+4. Allow a card to be deleted.
+
+
+Component Interface
+Each model must support only one method: a function that returns a URL that is unique to each entry in each table. These URLs will be used to represent the different entries as actual web pages.

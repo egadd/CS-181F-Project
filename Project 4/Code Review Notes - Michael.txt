@@ -1,0 +1,9 @@
+﻿Michael Vassilevsky
+CS 181F
+
+
+1. models.py is commented as part of Project 3.
+2. Groups not implemented in userTable.
+3. How do owner and cards in UserSetTable get the userID and card IDs?
+4. The maxlength for the front and back of cards should be significantly larger.
+5. How does cardTable get the setID for the set?

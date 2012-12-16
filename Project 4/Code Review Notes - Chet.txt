@@ -1,0 +1,14 @@
+﻿Code Review - Chet
+
+
+userTable:
+*question: why is userID necessary? I thought we were planning on using email to uniquely identify the user?
+
+
+UserSetTable:
+*either setID or setName should be a unique identifier.  No need for duplication.
+
+
+cardTable:
+*userID should be a PositiveInteger() so that it also specifies order... in the complete project a unique card would be identified by set, cardID, and authorID, but since we are not doing the full project we only need set and cardID
+*set should not be a ManyToManyField because each card only belongs to one set.

@@ -1,0 +1,27 @@
+﻿Original Author: Eli Gadd
+Reviewers: Michael Vassilevsky, Chet Weger
+CS 181F
+16 December 2012
+
+
+Code Review Process Report
+
+
+Value of the Review
+        Using a code review for the Django model component proved helpful because it allowed Eli to work ahead on the component on his own. Also, once he had produced the preliminary version of the code, the other two members of the group were able to give valuable input, based on their knowledge the components they would be implementing, on what needed to change to fit better with their own components. Many of these issues should never have been present had there been sufficient design and specifications before hand, but the review process allowed for this to be handled gracefully anyway.
+
+
+Issues After the Process
+        Only one real issue remained, and that was the type of fields to be used for a few of the fields in the models. This was discussed heavily at the meeting, but it was not completely clear until the report what the group had decided was necessary.
+
+
+Timing of the Review
+        Given how ineffective testing has proven for the framework we chose, we believe that testing the models before the review would have been wasted effort because the things that changed during the review would have required changes to the test cases.
+
+
+Changes to the Test Plan
+        This is difficult to comment on because a test plan was never implemented, but the test cases written for this component were so simplistic and quite simply just sanity checks, that little would have changed if I had known that a code review lay ahead.
+
+
+Changes Looking Forward
+        I think that this was the smartest component for the code review process to be applied to. I do not think that any changes should have been made to this process; it worked well as performed.

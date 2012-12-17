@@ -1,0 +1,5 @@
+﻿Michael Vassilevsky
+Pair Programming Exercise
+
+
+        Chet and I did pair programming on our components: the User Profile and Create/Edit pages. We also worked together on tests and integration. We both became more acquainted with Django as we wrote our code. We helped each other we encountered obstacles. Because of our unfamiliarity with Django, it was very helpful to have two people looking at documentation and explaining it to each other, and greatly increased writing speed and quality of the code, as two programmers’ knowledge of Django prevented us from making significant mistakes and reduced the rate at which we got stuck while writing code. While we were much more productive programming in a pair than alone, we would have been even more effective if we had had more prior knowledge of Django.

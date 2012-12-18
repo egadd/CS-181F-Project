@@ -1,0 +1,22 @@
+﻿Code Review Summary
+Author: Chet Weger
+Reviewed: Eli Gadd
+
+
+General Fix:
+1. ManyToManyField() is not used correctly.  Instead 
+1. must fix (applies to all three tables)
+CardTable:
+1. AutoField is a Positive integer
+1. clarification
+1. Add a field that handles card order (in addition to unique identification)
+1. must fix
+1. TextField should have a max. size of 1000
+1. should fix
+1. set should be a ForeignKey()
+1. must fix
+UserTable:
+1. Django models must automatically come with a unique identification field
+1. clarification
+1. owner should be a ForeignKey()
+1. must fix
